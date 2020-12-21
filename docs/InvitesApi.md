@@ -1,6 +1,6 @@
 # TractionGuest.InvitesApi
 
-All URIs are relative to *https://tractionguest.ca/api/v3*
+All URIs are relative to *https://us.tractionguest.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,8 +29,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -98,8 +98,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -165,8 +165,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -227,8 +227,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -293,8 +293,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -378,8 +378,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
