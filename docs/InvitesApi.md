@@ -1,6 +1,6 @@
 # TractionGuest.InvitesApi
 
-All URIs are relative to *https://tractionguest.ca/api/v3*
+All URIs are relative to *https://us.tractionguest.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_location_invite**
-> object create_location_invite(location_id, invite_create_params, idempotency_key=idempotency_key)
+> InviteDetail create_location_invite(location_id, invite_create_params, idempotency_key=idempotency_key)
 
 Create an Invite
 
@@ -29,15 +29,15 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.InvitesApi(api_client)
     location_id = 'location_id_example' # str | 
-invite_create_params = TractionGuest.InviteCreateParams() # InviteCreateParams | 
+invite_create_params = {"company":"some text","email":"some text","end_date":"2020-07-17T01:59:59.999Z","last_name":"some text","start_date":"2020-07-17T01:59:59.999Z","title":"some text","watchlist_colour":"ORANGE","host_ids":[96,2],"custom_fields":[{"format":"string","field_name":"some text","field_value":"some text"},{"format":"string","field_name":"some text","field_value":"some text"}],"email_template_id":53,"mobile_number":"some text","first_name":"some text","notification_triggers":[{"offset_direction":"BEFORE","offset_unit":"days","offset_amount":34,"offset_origin":"START","email_template_id":63,"notification_groups":["some text","some text"]},{"offset_direction":"AFTER","offset_unit":"hours","offset_amount":12,"offset_origin":"END","email_template_id":2,"notification_groups":["some text","some text"]}]} # InviteCreateParams | 
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**InviteDetail**](InviteDetail.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_registration_invite**
-> object create_registration_invite(registration_id, idempotency_key=idempotency_key)
+> InviteDetail create_registration_invite(registration_id, idempotency_key=idempotency_key)
 
 Create an Invite from a Registration
 
@@ -98,8 +98,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**InviteDetail**](InviteDetail.md)
 
 ### Authorization
 
@@ -165,8 +165,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -227,8 +227,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -293,8 +293,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_invite**
-> object update_invite(invite_id, invite_create_params1, idempotency_key=idempotency_key)
+> InviteDetail update_invite(invite_id, invite_update_params, idempotency_key=idempotency_key)
 
 Update an Invite
 
@@ -378,20 +378,20 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.InvitesApi(api_client)
     invite_id = 'invite_id_example' # str | 
-invite_create_params1 = TractionGuest.InviteCreateParams1() # InviteCreateParams1 | 
+invite_update_params = {"checked_in":true,"on_premise":true,"sent_email":"some text","user_id":45,"device_configuration_id":14} # InviteUpdateParams | Updated `Invite` information.
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
         # Update an Invite
-        api_response = api_instance.update_invite(invite_id, invite_create_params1, idempotency_key=idempotency_key)
+        api_response = api_instance.update_invite(invite_id, invite_update_params, idempotency_key=idempotency_key)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling InvitesApi->update_invite: %s\n" % e)
@@ -402,12 +402,12 @@ idempotency_key = 'idempotency_key_example' # str | An optional idempotency key 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invite_id** | **str**|  | 
- **invite_create_params1** | [**InviteCreateParams1**](InviteCreateParams1.md)|  | 
+ **invite_update_params** | [**InviteUpdateParams**](InviteUpdateParams.md)| Updated &#x60;Invite&#x60; information. | 
  **idempotency_key** | **str**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] 
 
 ### Return type
 
-**object**
+[**InviteDetail**](InviteDetail.md)
 
 ### Authorization
 

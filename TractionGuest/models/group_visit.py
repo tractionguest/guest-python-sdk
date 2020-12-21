@@ -35,8 +35,8 @@ class GroupVisit(object):
     """
     openapi_types = {
         'id': 'int',
-        'location': 'object',
-        'hosts': 'list[object]',
+        'location': 'Location',
+        'hosts': 'list[Host]',
         'name': 'str',
         'start_time': 'str',
         'end_time': 'str',
@@ -115,7 +115,7 @@ class GroupVisit(object):
 
 
         :return: The location of this GroupVisit.  # noqa: E501
-        :rtype: object
+        :rtype: Location
         """
         return self._location
 
@@ -125,7 +125,7 @@ class GroupVisit(object):
 
 
         :param location: The location of this GroupVisit.  # noqa: E501
-        :type: object
+        :type: Location
         """
 
         self._location = location
@@ -136,7 +136,7 @@ class GroupVisit(object):
 
 
         :return: The hosts of this GroupVisit.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[Host]
         """
         return self._hosts
 
@@ -146,7 +146,7 @@ class GroupVisit(object):
 
 
         :param hosts: The hosts of this GroupVisit.  # noqa: E501
-        :type: list[object]
+        :type: list[Host]
         """
 
         self._hosts = hosts

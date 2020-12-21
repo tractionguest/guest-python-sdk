@@ -5,7 +5,7 @@ The data collected from the response on a Registration
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | UUID | [optional] 
-**custom_fields** | **list[object]** | Flex fields | [optional] 
+**custom_fields** | [**list[CustomField]**](CustomField.md) | Flex fields | [optional] 
 **page_type** | **str** |  | [optional] 
 **sequence** | **int** |  | [optional] 
 **title** | **str** | Page title | [optional] 

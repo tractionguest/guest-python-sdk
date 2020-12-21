@@ -5,10 +5,10 @@ The root of the InviteCreateParams type's schema.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mobile_number** | **str** |  | [optional] 
-**notification_triggers** | **list[object]** |  | [optional] 
+**notification_triggers** | [**list[NotificationTriggerCreateParams]**](NotificationTriggerCreateParams.md) |  | [optional] 
 **first_name** | **str** |  | 
 **email_template_id** | **int** |  | [optional] 
-**custom_fields** | **list[object]** |  | [optional] 
+**custom_fields** | [**list[CustomField]**](CustomField.md) |  | [optional] 
 **host_ids** | **list[int]** |  | [optional] 
 **watchlist_colour** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 

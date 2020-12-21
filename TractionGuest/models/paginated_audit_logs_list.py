@@ -34,8 +34,8 @@ class PaginatedAuditLogsList(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'pagination': 'object',
-        'audit_logs': 'list[object]'
+        'pagination': 'Pagination',
+        'audit_logs': 'list[AuditLog]'
     }
 
     attribute_map = {
@@ -62,7 +62,7 @@ class PaginatedAuditLogsList(object):
 
 
         :return: The pagination of this PaginatedAuditLogsList.  # noqa: E501
-        :rtype: object
+        :rtype: Pagination
         """
         return self._pagination
 
@@ -72,7 +72,7 @@ class PaginatedAuditLogsList(object):
 
 
         :param pagination: The pagination of this PaginatedAuditLogsList.  # noqa: E501
-        :type: object
+        :type: Pagination
         """
         if self.local_vars_configuration.client_side_validation and pagination is None:  # noqa: E501
             raise ValueError("Invalid value for `pagination`, must not be `None`")  # noqa: E501
@@ -85,7 +85,7 @@ class PaginatedAuditLogsList(object):
 
 
         :return: The audit_logs of this PaginatedAuditLogsList.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[AuditLog]
         """
         return self._audit_logs
 
@@ -95,7 +95,7 @@ class PaginatedAuditLogsList(object):
 
 
         :param audit_logs: The audit_logs of this PaginatedAuditLogsList.  # noqa: E501
-        :type: list[object]
+        :type: list[AuditLog]
         """
         if self.local_vars_configuration.client_side_validation and audit_logs is None:  # noqa: E501
             raise ValueError("Invalid value for `audit_logs`, must not be `None`")  # noqa: E501

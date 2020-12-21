@@ -34,7 +34,7 @@ class HostBatchCreateParams(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'hosts': 'list[object]'
+        'hosts': 'list[HostCreateParams]'
     }
 
     attribute_map = {
@@ -59,7 +59,7 @@ class HostBatchCreateParams(object):
 
 
         :return: The hosts of this HostBatchCreateParams.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[HostCreateParams]
         """
         return self._hosts
 
@@ -69,7 +69,7 @@ class HostBatchCreateParams(object):
 
 
         :param hosts: The hosts of this HostBatchCreateParams.  # noqa: E501
-        :type: list[object]
+        :type: list[HostCreateParams]
         """
 
         self._hosts = hosts

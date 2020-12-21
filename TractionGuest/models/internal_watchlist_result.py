@@ -76,6 +76,7 @@ class InternalWatchlistResult(object):
     def id(self):
         """Gets the id of this InternalWatchlistResult.  # noqa: E501
 
+          # noqa: E501
 
         :return: The id of this InternalWatchlistResult.  # noqa: E501
         :rtype: int
@@ -86,6 +87,7 @@ class InternalWatchlistResult(object):
     def id(self, id):
         """Sets the id of this InternalWatchlistResult.
 
+          # noqa: E501
 
         :param id: The id of this InternalWatchlistResult.  # noqa: E501
         :type: int
@@ -97,6 +99,7 @@ class InternalWatchlistResult(object):
     def email(self):
         """Gets the email of this InternalWatchlistResult.  # noqa: E501
 
+          # noqa: E501
 
         :return: The email of this InternalWatchlistResult.  # noqa: E501
         :rtype: str
@@ -107,6 +110,7 @@ class InternalWatchlistResult(object):
     def email(self, email):
         """Sets the email of this InternalWatchlistResult.
 
+          # noqa: E501
 
         :param email: The email of this InternalWatchlistResult.  # noqa: E501
         :type: str
@@ -118,6 +122,7 @@ class InternalWatchlistResult(object):
     def colour(self):
         """Gets the colour of this InternalWatchlistResult.  # noqa: E501
 
+          # noqa: E501
 
         :return: The colour of this InternalWatchlistResult.  # noqa: E501
         :rtype: str
@@ -128,6 +133,7 @@ class InternalWatchlistResult(object):
     def colour(self, colour):
         """Sets the colour of this InternalWatchlistResult.
 
+          # noqa: E501
 
         :param colour: The colour of this InternalWatchlistResult.  # noqa: E501
         :type: str
@@ -141,6 +147,7 @@ class InternalWatchlistResult(object):
     def last_name(self):
         """Gets the last_name of this InternalWatchlistResult.  # noqa: E501
 
+          # noqa: E501
 
         :return: The last_name of this InternalWatchlistResult.  # noqa: E501
         :rtype: str
@@ -151,6 +158,7 @@ class InternalWatchlistResult(object):
     def last_name(self, last_name):
         """Sets the last_name of this InternalWatchlistResult.
 
+          # noqa: E501
 
         :param last_name: The last_name of this InternalWatchlistResult.  # noqa: E501
         :type: str
@@ -162,6 +170,7 @@ class InternalWatchlistResult(object):
     def first_name(self):
         """Gets the first_name of this InternalWatchlistResult.  # noqa: E501
 
+          # noqa: E501
 
         :return: The first_name of this InternalWatchlistResult.  # noqa: E501
         :rtype: str
@@ -172,6 +181,7 @@ class InternalWatchlistResult(object):
     def first_name(self, first_name):
         """Sets the first_name of this InternalWatchlistResult.
 
+          # noqa: E501
 
         :param first_name: The first_name of this InternalWatchlistResult.  # noqa: E501
         :type: str

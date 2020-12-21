@@ -47,7 +47,7 @@ class WatchlistsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param WatchlistCreateParams watchlist_create_params: (required)
+        :param WatchlistCreateParams watchlist_create_params: The new `Watchlist` to create (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -73,7 +73,7 @@ class WatchlistsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param WatchlistCreateParams watchlist_create_params: (required)
+        :param WatchlistCreateParams watchlist_create_params: The new `Watchlist` to create (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -298,7 +298,7 @@ class WatchlistsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Watchlist
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -326,7 +326,7 @@ class WatchlistsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(Watchlist, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -390,7 +390,7 @@ class WatchlistsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='Watchlist',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -528,18 +528,18 @@ class WatchlistsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_watchlist(self, watchlist_id, body, **kwargs):  # noqa: E501
+    def update_watchlist(self, watchlist_id, watchlist_create_params, **kwargs):  # noqa: E501
         """Update a Watchlist  # noqa: E501
 
         Update an existing `Watchlist` record. Every operation against this endpoint is recorded in the audit log.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_watchlist(watchlist_id, body, async_req=True)
+        >>> thread = api.update_watchlist(watchlist_id, watchlist_create_params, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str watchlist_id: (required)
-        :param object body: The watchlist record attributes to update (required)
+        :param WatchlistCreateParams watchlist_create_params: The watchlist record attributes to update (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -548,25 +548,25 @@ class WatchlistsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Watchlist
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_watchlist_with_http_info(watchlist_id, body, **kwargs)  # noqa: E501
+        return self.update_watchlist_with_http_info(watchlist_id, watchlist_create_params, **kwargs)  # noqa: E501
 
-    def update_watchlist_with_http_info(self, watchlist_id, body, **kwargs):  # noqa: E501
+    def update_watchlist_with_http_info(self, watchlist_id, watchlist_create_params, **kwargs):  # noqa: E501
         """Update a Watchlist  # noqa: E501
 
         Update an existing `Watchlist` record. Every operation against this endpoint is recorded in the audit log.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_watchlist_with_http_info(watchlist_id, body, async_req=True)
+        >>> thread = api.update_watchlist_with_http_info(watchlist_id, watchlist_create_params, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str watchlist_id: (required)
-        :param object body: The watchlist record attributes to update (required)
+        :param WatchlistCreateParams watchlist_create_params: The watchlist record attributes to update (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -577,7 +577,7 @@ class WatchlistsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(Watchlist, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -586,7 +586,7 @@ class WatchlistsApi(object):
 
         all_params = [
             'watchlist_id',
-            'body',
+            'watchlist_create_params',
             'idempotency_key'
         ]
         all_params.extend(
@@ -610,10 +610,10 @@ class WatchlistsApi(object):
         if self.api_client.client_side_validation and ('watchlist_id' not in local_var_params or  # noqa: E501
                                                         local_var_params['watchlist_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `watchlist_id` when calling `update_watchlist`")  # noqa: E501
-        # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
-                                                        local_var_params['body'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `update_watchlist`")  # noqa: E501
+        # verify the required parameter 'watchlist_create_params' is set
+        if self.api_client.client_side_validation and ('watchlist_create_params' not in local_var_params or  # noqa: E501
+                                                        local_var_params['watchlist_create_params'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `watchlist_create_params` when calling `update_watchlist`")  # noqa: E501
 
         collection_formats = {}
 
@@ -631,8 +631,8 @@ class WatchlistsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
+        if 'watchlist_create_params' in local_var_params:
+            body_params = local_var_params['watchlist_create_params']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -652,7 +652,7 @@ class WatchlistsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='Watchlist',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

@@ -35,7 +35,7 @@ class GuestResponse(object):
     """
     openapi_types = {
         'id': 'str',
-        'custom_fields': 'list[object]',
+        'custom_fields': 'list[CustomField]',
         'page_type': 'str',
         'sequence': 'int',
         'title': 'str'
@@ -103,7 +103,7 @@ class GuestResponse(object):
         Flex fields  # noqa: E501
 
         :return: The custom_fields of this GuestResponse.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[CustomField]
         """
         return self._custom_fields
 
@@ -114,7 +114,7 @@ class GuestResponse(object):
         Flex fields  # noqa: E501
 
         :param custom_fields: The custom_fields of this GuestResponse.  # noqa: E501
-        :type: list[object]
+        :type: list[CustomField]
         """
 
         self._custom_fields = custom_fields

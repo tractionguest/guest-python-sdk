@@ -1,6 +1,6 @@
 # TractionGuest.SigninsApi
 
-All URIs are relative to *https://tractionguest.ca/api/v3*
+All URIs are relative to *https://us.tractionguest.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,14 +27,14 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.SigninsApi(api_client)
-    signin_create_params = TractionGuest.SigninCreateParams() # SigninCreateParams |  (optional)
+    signin_create_params = {"guest_email_template_id":47,"host_email_template_id":65,"host_ids":[77,49],"location_id":79,"send_notifications":true,"photos":[{},{}],"sms_message":"some text","first_name":"some text","last_name":"some text","company":"some text","email":"some text"} # SigninCreateParams | Params for creating a Signin can omit certain fields if a `registration_id` is present. (optional)
 
     try:
         # Create Signin
@@ -48,7 +48,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **signin_create_params** | [**SigninCreateParams**](SigninCreateParams.md)|  | [optional] 
+ **signin_create_params** | [**SigninCreateParams**](SigninCreateParams.md)| Params for creating a Signin can omit certain fields if a &#x60;registration_id&#x60; is present. | [optional] 
 
 ### Return type
 
@@ -91,8 +91,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -157,8 +157,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_signin**
-> object update_signin(signin_id, signin_update_params, idempotency_key=idempotency_key)
+> SigninDetail update_signin(signin_id, signin_update_params, idempotency_key=idempotency_key)
 
 Update a Signin
 
@@ -240,15 +240,15 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.SigninsApi(api_client)
     signin_id = 'signin_id_example' # str | 
-signin_update_params = TractionGuest.SigninUpdateParams() # SigninUpdateParams | 
+signin_update_params = {"is_signed_out":true,"is_acknowledged":true,"is_accounted_for":true} # SigninUpdateParams | The only updatable values for a `Signin` are `badge_number`, `badge_returned`, `is_accounted_for`, `is_signed_out`, and `is_acknowledged`.  `is_signed_out` and `is_acknowledged` are pseudo attributes that once set to true, are irreversible.
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
@@ -264,12 +264,12 @@ idempotency_key = 'idempotency_key_example' # str | An optional idempotency key 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **signin_id** | **str**|  | 
- **signin_update_params** | [**SigninUpdateParams**](SigninUpdateParams.md)|  | 
+ **signin_update_params** | [**SigninUpdateParams**](SigninUpdateParams.md)| The only updatable values for a &#x60;Signin&#x60; are &#x60;badge_number&#x60;, &#x60;badge_returned&#x60;, &#x60;is_accounted_for&#x60;, &#x60;is_signed_out&#x60;, and &#x60;is_acknowledged&#x60;.  &#x60;is_signed_out&#x60; and &#x60;is_acknowledged&#x60; are pseudo attributes that once set to true, are irreversible. | 
  **idempotency_key** | **str**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] 
 
 ### Return type
 
-**object**
+[**SigninDetail**](SigninDetail.md)
 
 ### Authorization
 

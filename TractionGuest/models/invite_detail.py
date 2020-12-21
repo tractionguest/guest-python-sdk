@@ -35,15 +35,15 @@ class InviteDetail(object):
     """
     openapi_types = {
         'id': 'int',
-        'registration': 'object',
+        'registration': 'Registration',
         'mobile_number': 'str',
         'email_template': 'EmailTemplate',
         'invite_watchlist': 'InviteWatchlist',
         'notification_triggers': 'list[NotificationTrigger]',
-        'custom_fields': 'list[object]',
+        'custom_fields': 'list[CustomField]',
         'watchlist_colour': 'str',
-        'location': 'object',
-        'hosts': 'list[object]',
+        'location': 'Location',
+        'hosts': 'list[Host]',
         'start_date': 'datetime',
         'last_name': 'str',
         'first_name': 'str',
@@ -163,7 +163,7 @@ class InviteDetail(object):
 
 
         :return: The registration of this InviteDetail.  # noqa: E501
-        :rtype: object
+        :rtype: Registration
         """
         return self._registration
 
@@ -173,7 +173,7 @@ class InviteDetail(object):
 
 
         :param registration: The registration of this InviteDetail.  # noqa: E501
-        :type: object
+        :type: Registration
         """
 
         self._registration = registration
@@ -272,7 +272,7 @@ class InviteDetail(object):
 
 
         :return: The custom_fields of this InviteDetail.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[CustomField]
         """
         return self._custom_fields
 
@@ -282,7 +282,7 @@ class InviteDetail(object):
 
 
         :param custom_fields: The custom_fields of this InviteDetail.  # noqa: E501
-        :type: list[object]
+        :type: list[CustomField]
         """
 
         self._custom_fields = custom_fields
@@ -320,7 +320,7 @@ class InviteDetail(object):
 
 
         :return: The location of this InviteDetail.  # noqa: E501
-        :rtype: object
+        :rtype: Location
         """
         return self._location
 
@@ -330,7 +330,7 @@ class InviteDetail(object):
 
 
         :param location: The location of this InviteDetail.  # noqa: E501
-        :type: object
+        :type: Location
         """
 
         self._location = location
@@ -341,7 +341,7 @@ class InviteDetail(object):
 
 
         :return: The hosts of this InviteDetail.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[Host]
         """
         return self._hosts
 
@@ -351,7 +351,7 @@ class InviteDetail(object):
 
 
         :param hosts: The hosts of this InviteDetail.  # noqa: E501
-        :type: list[object]
+        :type: list[Host]
         """
 
         self._hosts = hosts

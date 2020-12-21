@@ -36,7 +36,7 @@ class User(object):
     openapi_types = {
         'id': 'int',
         'mobile_access_enabled': 'bool',
-        'permission_groups': 'list[Permission]',
+        'permission_groups': 'list[PermissionGroup]',
         'email': 'str',
         'last_name': 'str',
         'first_name': 'str',
@@ -138,7 +138,7 @@ class User(object):
 
 
         :return: The permission_groups of this User.  # noqa: E501
-        :rtype: list[Permission]
+        :rtype: list[PermissionGroup]
         """
         return self._permission_groups
 
@@ -148,7 +148,7 @@ class User(object):
 
 
         :param permission_groups: The permission_groups of this User.  # noqa: E501
-        :type: list[Permission]
+        :type: list[PermissionGroup]
         """
 
         self._permission_groups = permission_groups
@@ -157,6 +157,7 @@ class User(object):
     def email(self):
         """Gets the email of this User.  # noqa: E501
 
+          # noqa: E501
 
         :return: The email of this User.  # noqa: E501
         :rtype: str
@@ -167,6 +168,7 @@ class User(object):
     def email(self, email):
         """Sets the email of this User.
 
+          # noqa: E501
 
         :param email: The email of this User.  # noqa: E501
         :type: str
@@ -180,6 +182,7 @@ class User(object):
     def last_name(self):
         """Gets the last_name of this User.  # noqa: E501
 
+          # noqa: E501
 
         :return: The last_name of this User.  # noqa: E501
         :rtype: str
@@ -190,6 +193,7 @@ class User(object):
     def last_name(self, last_name):
         """Sets the last_name of this User.
 
+          # noqa: E501
 
         :param last_name: The last_name of this User.  # noqa: E501
         :type: str

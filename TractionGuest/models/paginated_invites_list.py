@@ -34,8 +34,8 @@ class PaginatedInvitesList(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'invites': 'list[object]',
-        'pagination': 'object'
+        'invites': 'list[Invite]',
+        'pagination': 'Pagination'
     }
 
     attribute_map = {
@@ -62,7 +62,7 @@ class PaginatedInvitesList(object):
 
 
         :return: The invites of this PaginatedInvitesList.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[Invite]
         """
         return self._invites
 
@@ -72,7 +72,7 @@ class PaginatedInvitesList(object):
 
 
         :param invites: The invites of this PaginatedInvitesList.  # noqa: E501
-        :type: list[object]
+        :type: list[Invite]
         """
         if self.local_vars_configuration.client_side_validation and invites is None:  # noqa: E501
             raise ValueError("Invalid value for `invites`, must not be `None`")  # noqa: E501
@@ -85,7 +85,7 @@ class PaginatedInvitesList(object):
 
 
         :return: The pagination of this PaginatedInvitesList.  # noqa: E501
-        :rtype: object
+        :rtype: Pagination
         """
         return self._pagination
 
@@ -95,7 +95,7 @@ class PaginatedInvitesList(object):
 
 
         :param pagination: The pagination of this PaginatedInvitesList.  # noqa: E501
-        :type: object
+        :type: Pagination
         """
         if self.local_vars_configuration.client_side_validation and pagination is None:  # noqa: E501
             raise ValueError("Invalid value for `pagination`, must not be `None`")  # noqa: E501

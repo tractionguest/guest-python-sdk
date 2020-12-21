@@ -47,7 +47,7 @@ class PackagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param PackageCreateParamsV1 package_create_params_v1:
+        :param PackageCreateParams package_create_params: Parameters for creating a package
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -72,7 +72,7 @@ class PackagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param PackageCreateParamsV1 package_create_params_v1:
+        :param PackageCreateParams package_create_params: Parameters for creating a package
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -90,7 +90,7 @@ class PackagesApi(object):
         local_var_params = locals()
 
         all_params = [
-            'package_create_params_v1'
+            'package_create_params'
         ]
         all_params.extend(
             [
@@ -122,8 +122,8 @@ class PackagesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'package_create_params_v1' in local_var_params:
-            body_params = local_var_params['package_create_params_v1']
+        if 'package_create_params' in local_var_params:
+            body_params = local_var_params['package_create_params']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -289,7 +289,7 @@ class PackagesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Package
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -317,7 +317,7 @@ class PackagesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(Package, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -381,7 +381,7 @@ class PackagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='Package',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -540,7 +540,7 @@ class PackagesApi(object):
         :param async_req bool: execute request asynchronously
         :param str package_id: (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param PackageUpdateParamsV1 package_update_params_v1:
+        :param PackageUpdateParams package_update_params:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -548,7 +548,7 @@ class PackagesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Package
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -567,7 +567,7 @@ class PackagesApi(object):
         :param async_req bool: execute request asynchronously
         :param str package_id: (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param PackageUpdateParamsV1 package_update_params_v1:
+        :param PackageUpdateParams package_update_params:
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -577,7 +577,7 @@ class PackagesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(Package, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -587,7 +587,7 @@ class PackagesApi(object):
         all_params = [
             'package_id',
             'idempotency_key',
-            'package_update_params_v1'
+            'package_update_params'
         ]
         all_params.extend(
             [
@@ -627,8 +627,8 @@ class PackagesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'package_update_params_v1' in local_var_params:
-            body_params = local_var_params['package_update_params_v1']
+        if 'package_update_params' in local_var_params:
+            body_params = local_var_params['package_update_params']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -648,7 +648,7 @@ class PackagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='Package',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

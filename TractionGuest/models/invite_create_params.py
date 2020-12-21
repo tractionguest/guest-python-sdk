@@ -35,10 +35,10 @@ class InviteCreateParams(object):
     """
     openapi_types = {
         'mobile_number': 'str',
-        'notification_triggers': 'list[object]',
+        'notification_triggers': 'list[NotificationTriggerCreateParams]',
         'first_name': 'str',
         'email_template_id': 'int',
-        'custom_fields': 'list[object]',
+        'custom_fields': 'list[CustomField]',
         'host_ids': 'list[int]',
         'watchlist_colour': 'str',
         'title': 'str',
@@ -142,7 +142,7 @@ class InviteCreateParams(object):
 
 
         :return: The notification_triggers of this InviteCreateParams.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[NotificationTriggerCreateParams]
         """
         return self._notification_triggers
 
@@ -152,7 +152,7 @@ class InviteCreateParams(object):
 
 
         :param notification_triggers: The notification_triggers of this InviteCreateParams.  # noqa: E501
-        :type: list[object]
+        :type: list[NotificationTriggerCreateParams]
         """
 
         self._notification_triggers = notification_triggers
@@ -207,7 +207,7 @@ class InviteCreateParams(object):
 
 
         :return: The custom_fields of this InviteCreateParams.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[CustomField]
         """
         return self._custom_fields
 
@@ -217,7 +217,7 @@ class InviteCreateParams(object):
 
 
         :param custom_fields: The custom_fields of this InviteCreateParams.  # noqa: E501
-        :type: list[object]
+        :type: list[CustomField]
         """
 
         self._custom_fields = custom_fields

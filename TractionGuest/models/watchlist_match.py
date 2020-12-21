@@ -501,6 +501,7 @@ class WatchlistMatch(object):
     def type(self):
         """Gets the type of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The type of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -511,6 +512,7 @@ class WatchlistMatch(object):
     def type(self, type):
         """Sets the type of this WatchlistMatch.
 
+          # noqa: E501
 
         :param type: The type of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -522,6 +524,7 @@ class WatchlistMatch(object):
     def category(self):
         """Gets the category of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The category of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -532,6 +535,7 @@ class WatchlistMatch(object):
     def category(self, category):
         """Sets the category of this WatchlistMatch.
 
+          # noqa: E501
 
         :param category: The category of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -543,6 +547,7 @@ class WatchlistMatch(object):
     def street1(self):
         """Gets the street1 of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The street1 of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -553,6 +558,7 @@ class WatchlistMatch(object):
     def street1(self, street1):
         """Sets the street1 of this WatchlistMatch.
 
+          # noqa: E501
 
         :param street1: The street1 of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -564,6 +570,7 @@ class WatchlistMatch(object):
     def street2(self):
         """Gets the street2 of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The street2 of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -574,6 +581,7 @@ class WatchlistMatch(object):
     def street2(self, street2):
         """Sets the street2 of this WatchlistMatch.
 
+          # noqa: E501
 
         :param street2: The street2 of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -585,6 +593,7 @@ class WatchlistMatch(object):
     def city(self):
         """Gets the city of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The city of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -595,6 +604,7 @@ class WatchlistMatch(object):
     def city(self, city):
         """Sets the city of this WatchlistMatch.
 
+          # noqa: E501
 
         :param city: The city of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -606,6 +616,7 @@ class WatchlistMatch(object):
     def state(self):
         """Gets the state of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The state of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -616,6 +627,7 @@ class WatchlistMatch(object):
     def state(self, state):
         """Sets the state of this WatchlistMatch.
 
+          # noqa: E501
 
         :param state: The state of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -627,6 +639,7 @@ class WatchlistMatch(object):
     def country(self):
         """Gets the country of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The country of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -637,6 +650,7 @@ class WatchlistMatch(object):
     def country(self, country):
         """Sets the country of this WatchlistMatch.
 
+          # noqa: E501
 
         :param country: The country of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -648,6 +662,7 @@ class WatchlistMatch(object):
     def notes(self):
         """Gets the notes of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The notes of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -658,6 +673,7 @@ class WatchlistMatch(object):
     def notes(self, notes):
         """Sets the notes of this WatchlistMatch.
 
+          # noqa: E501
 
         :param notes: The notes of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -669,6 +685,7 @@ class WatchlistMatch(object):
     def frc(self):
         """Gets the frc of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The frc of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -679,6 +696,7 @@ class WatchlistMatch(object):
     def frc(self, frc):
         """Sets the frc of this WatchlistMatch.
 
+          # noqa: E501
 
         :param frc: The frc of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -690,6 +708,7 @@ class WatchlistMatch(object):
     def start(self):
         """Gets the start of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The start of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -700,6 +719,7 @@ class WatchlistMatch(object):
     def start(self, start):
         """Sets the start of this WatchlistMatch.
 
+          # noqa: E501
 
         :param start: The start of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -711,6 +731,7 @@ class WatchlistMatch(object):
     def end(self):
         """Gets the end of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The end of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -721,6 +742,7 @@ class WatchlistMatch(object):
     def end(self, end):
         """Sets the end of this WatchlistMatch.
 
+          # noqa: E501
 
         :param end: The end of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -732,6 +754,7 @@ class WatchlistMatch(object):
     def frserve(self):
         """Gets the frserve of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The frserve of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -742,6 +765,7 @@ class WatchlistMatch(object):
     def frserve(self, frserve):
         """Sets the frserve of this WatchlistMatch.
 
+          # noqa: E501
 
         :param frserve: The frserve of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -753,6 +777,7 @@ class WatchlistMatch(object):
     def optional_id(self):
         """Gets the optional_id of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The optional_id of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -763,6 +788,7 @@ class WatchlistMatch(object):
     def optional_id(self, optional_id):
         """Sets the optional_id of this WatchlistMatch.
 
+          # noqa: E501
 
         :param optional_id: The optional_id of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -774,6 +800,7 @@ class WatchlistMatch(object):
     def alert_type(self):
         """Gets the alert_type of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The alert_type of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -784,6 +811,7 @@ class WatchlistMatch(object):
     def alert_type(self, alert_type):
         """Sets the alert_type of this WatchlistMatch.
 
+          # noqa: E501
 
         :param alert_type: The alert_type of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -795,6 +823,7 @@ class WatchlistMatch(object):
     def pair_status(self):
         """Gets the pair_status of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The pair_status of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -805,6 +834,7 @@ class WatchlistMatch(object):
     def pair_status(self, pair_status):
         """Sets the pair_status of this WatchlistMatch.
 
+          # noqa: E501
 
         :param pair_status: The pair_status of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -816,6 +846,7 @@ class WatchlistMatch(object):
     def pair_reason(self):
         """Gets the pair_reason of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The pair_reason of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -826,6 +857,7 @@ class WatchlistMatch(object):
     def pair_reason(self, pair_reason):
         """Sets the pair_reason of this WatchlistMatch.
 
+          # noqa: E501
 
         :param pair_reason: The pair_reason of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -837,6 +869,7 @@ class WatchlistMatch(object):
     def pair_comments(self):
         """Gets the pair_comments of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The pair_comments of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -847,6 +880,7 @@ class WatchlistMatch(object):
     def pair_comments(self, pair_comments):
         """Sets the pair_comments of this WatchlistMatch.
 
+          # noqa: E501
 
         :param pair_comments: The pair_comments of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -858,6 +892,7 @@ class WatchlistMatch(object):
     def application_display_name(self):
         """Gets the application_display_name of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The application_display_name of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -868,6 +903,7 @@ class WatchlistMatch(object):
     def application_display_name(self, application_display_name):
         """Sets the application_display_name of this WatchlistMatch.
 
+          # noqa: E501
 
         :param application_display_name: The application_display_name of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -879,6 +915,7 @@ class WatchlistMatch(object):
     def application_id(self):
         """Gets the application_id of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The application_id of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -889,6 +926,7 @@ class WatchlistMatch(object):
     def application_id(self, application_id):
         """Sets the application_id of this WatchlistMatch.
 
+          # noqa: E501
 
         :param application_id: The application_id of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -900,6 +938,7 @@ class WatchlistMatch(object):
     def client_id(self):
         """Gets the client_id of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The client_id of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -910,6 +949,7 @@ class WatchlistMatch(object):
     def client_id(self, client_id):
         """Sets the client_id of this WatchlistMatch.
 
+          # noqa: E501
 
         :param client_id: The client_id of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -921,6 +961,7 @@ class WatchlistMatch(object):
     def client_key(self):
         """Gets the client_key of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The client_key of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -931,6 +972,7 @@ class WatchlistMatch(object):
     def client_key(self, client_key):
         """Sets the client_key of this WatchlistMatch.
 
+          # noqa: E501
 
         :param client_key: The client_key of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -942,6 +984,7 @@ class WatchlistMatch(object):
     def client_full_name(self):
         """Gets the client_full_name of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The client_full_name of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -952,6 +995,7 @@ class WatchlistMatch(object):
     def client_full_name(self, client_full_name):
         """Sets the client_full_name of this WatchlistMatch.
 
+          # noqa: E501
 
         :param client_full_name: The client_full_name of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -963,6 +1007,7 @@ class WatchlistMatch(object):
     def list_key(self):
         """Gets the list_key of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_key of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -973,6 +1018,7 @@ class WatchlistMatch(object):
     def list_key(self, list_key):
         """Sets the list_key of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_key: The list_key of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -984,6 +1030,7 @@ class WatchlistMatch(object):
     def list_name(self):
         """Gets the list_name of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_name of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -994,6 +1041,7 @@ class WatchlistMatch(object):
     def list_name(self, list_name):
         """Sets the list_name of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_name: The list_name of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1005,6 +1053,7 @@ class WatchlistMatch(object):
     def list_id(self):
         """Gets the list_id of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_id of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1015,6 +1064,7 @@ class WatchlistMatch(object):
     def list_id(self, list_id):
         """Sets the list_id of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_id: The list_id of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1026,6 +1076,7 @@ class WatchlistMatch(object):
     def list_version(self):
         """Gets the list_version of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_version of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1036,6 +1087,7 @@ class WatchlistMatch(object):
     def list_version(self, list_version):
         """Sets the list_version of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_version: The list_version of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1047,6 +1099,7 @@ class WatchlistMatch(object):
     def list_modify_date(self):
         """Gets the list_modify_date of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_modify_date of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1057,6 +1110,7 @@ class WatchlistMatch(object):
     def list_modify_date(self, list_modify_date):
         """Sets the list_modify_date of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_modify_date: The list_modify_date of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1068,6 +1122,7 @@ class WatchlistMatch(object):
     def list_profile_id(self):
         """Gets the list_profile_id of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_profile_id of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1078,6 +1133,7 @@ class WatchlistMatch(object):
     def list_profile_id(self, list_profile_id):
         """Sets the list_profile_id of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_profile_id: The list_profile_id of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1089,6 +1145,7 @@ class WatchlistMatch(object):
     def list_profile_key(self):
         """Gets the list_profile_key of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_profile_key of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1099,6 +1156,7 @@ class WatchlistMatch(object):
     def list_profile_key(self, list_profile_key):
         """Sets the list_profile_key of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_profile_key: The list_profile_key of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1110,6 +1168,7 @@ class WatchlistMatch(object):
     def link_single_string_name(self):
         """Gets the link_single_string_name of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The link_single_string_name of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1120,6 +1179,7 @@ class WatchlistMatch(object):
     def link_single_string_name(self, link_single_string_name):
         """Sets the link_single_string_name of this WatchlistMatch.
 
+          # noqa: E501
 
         :param link_single_string_name: The link_single_string_name of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1131,6 +1191,7 @@ class WatchlistMatch(object):
     def list_parent_single_string_name(self):
         """Gets the list_parent_single_string_name of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_parent_single_string_name of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1141,6 +1202,7 @@ class WatchlistMatch(object):
     def list_parent_single_string_name(self, list_parent_single_string_name):
         """Sets the list_parent_single_string_name of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_parent_single_string_name: The list_parent_single_string_name of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1152,6 +1214,7 @@ class WatchlistMatch(object):
     def list_category(self):
         """Gets the list_category of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_category of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1162,6 +1225,7 @@ class WatchlistMatch(object):
     def list_category(self, list_category):
         """Sets the list_category of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_category: The list_category of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1173,6 +1237,7 @@ class WatchlistMatch(object):
     def list_pep_category(self):
         """Gets the list_pep_category of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_pep_category of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1183,6 +1248,7 @@ class WatchlistMatch(object):
     def list_pep_category(self, list_pep_category):
         """Sets the list_pep_category of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_pep_category: The list_pep_category of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1194,6 +1260,7 @@ class WatchlistMatch(object):
     def list_do_bs(self):
         """Gets the list_do_bs of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_do_bs of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1204,6 +1271,7 @@ class WatchlistMatch(object):
     def list_do_bs(self, list_do_bs):
         """Sets the list_do_bs of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_do_bs: The list_do_bs of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1215,6 +1283,7 @@ class WatchlistMatch(object):
     def list_countries(self):
         """Gets the list_countries of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The list_countries of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1225,6 +1294,7 @@ class WatchlistMatch(object):
     def list_countries(self, list_countries):
         """Sets the list_countries of this WatchlistMatch.
 
+          # noqa: E501
 
         :param list_countries: The list_countries of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1236,6 +1306,7 @@ class WatchlistMatch(object):
     def rank_string(self):
         """Gets the rank_string of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The rank_string of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1246,6 +1317,7 @@ class WatchlistMatch(object):
     def rank_string(self, rank_string):
         """Sets the rank_string of this WatchlistMatch.
 
+          # noqa: E501
 
         :param rank_string: The rank_string of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1257,6 +1329,7 @@ class WatchlistMatch(object):
     def ranktype(self):
         """Gets the ranktype of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The ranktype of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1267,6 +1340,7 @@ class WatchlistMatch(object):
     def ranktype(self, ranktype):
         """Sets the ranktype of this WatchlistMatch.
 
+          # noqa: E501
 
         :param ranktype: The ranktype of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1278,6 +1352,7 @@ class WatchlistMatch(object):
     def rankweight(self):
         """Gets the rankweight of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The rankweight of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1288,6 +1363,7 @@ class WatchlistMatch(object):
     def rankweight(self, rankweight):
         """Sets the rankweight of this WatchlistMatch.
 
+          # noqa: E501
 
         :param rankweight: The rankweight of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1299,6 +1375,7 @@ class WatchlistMatch(object):
     def pair_load_date(self):
         """Gets the pair_load_date of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The pair_load_date of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1309,6 +1386,7 @@ class WatchlistMatch(object):
     def pair_load_date(self, pair_load_date):
         """Sets the pair_load_date of this WatchlistMatch.
 
+          # noqa: E501
 
         :param pair_load_date: The pair_load_date of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1320,6 +1398,7 @@ class WatchlistMatch(object):
     def e_address_to(self):
         """Gets the e_address_to of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The e_address_to of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1330,6 +1409,7 @@ class WatchlistMatch(object):
     def e_address_to(self, e_address_to):
         """Sets the e_address_to of this WatchlistMatch.
 
+          # noqa: E501
 
         :param e_address_to: The e_address_to of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1341,6 +1421,7 @@ class WatchlistMatch(object):
     def e_address_cc(self):
         """Gets the e_address_cc of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The e_address_cc of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1351,6 +1432,7 @@ class WatchlistMatch(object):
     def e_address_cc(self, e_address_cc):
         """Sets the e_address_cc of this WatchlistMatch.
 
+          # noqa: E501
 
         :param e_address_cc: The e_address_cc of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1362,6 +1444,7 @@ class WatchlistMatch(object):
     def origin(self):
         """Gets the origin of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The origin of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1372,6 +1455,7 @@ class WatchlistMatch(object):
     def origin(self, origin):
         """Sets the origin of this WatchlistMatch.
 
+          # noqa: E501
 
         :param origin: The origin of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1383,6 +1467,7 @@ class WatchlistMatch(object):
     def secondsviewed(self):
         """Gets the secondsviewed of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The secondsviewed of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1393,6 +1478,7 @@ class WatchlistMatch(object):
     def secondsviewed(self, secondsviewed):
         """Sets the secondsviewed of this WatchlistMatch.
 
+          # noqa: E501
 
         :param secondsviewed: The secondsviewed of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1404,6 +1490,7 @@ class WatchlistMatch(object):
     def initial_user(self):
         """Gets the initial_user of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The initial_user of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1414,6 +1501,7 @@ class WatchlistMatch(object):
     def initial_user(self, initial_user):
         """Sets the initial_user of this WatchlistMatch.
 
+          # noqa: E501
 
         :param initial_user: The initial_user of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1425,6 +1513,7 @@ class WatchlistMatch(object):
     def is_pair_parent_flag(self):
         """Gets the is_pair_parent_flag of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The is_pair_parent_flag of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1435,6 +1524,7 @@ class WatchlistMatch(object):
     def is_pair_parent_flag(self, is_pair_parent_flag):
         """Sets the is_pair_parent_flag of this WatchlistMatch.
 
+          # noqa: E501
 
         :param is_pair_parent_flag: The is_pair_parent_flag of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1446,6 +1536,7 @@ class WatchlistMatch(object):
     def pair_met_search_criteria_flag(self):
         """Gets the pair_met_search_criteria_flag of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The pair_met_search_criteria_flag of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1456,6 +1547,7 @@ class WatchlistMatch(object):
     def pair_met_search_criteria_flag(self, pair_met_search_criteria_flag):
         """Sets the pair_met_search_criteria_flag of this WatchlistMatch.
 
+          # noqa: E501
 
         :param pair_met_search_criteria_flag: The pair_met_search_criteria_flag of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1467,6 +1559,7 @@ class WatchlistMatch(object):
     def editable_due_to_assignment_flag(self):
         """Gets the editable_due_to_assignment_flag of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The editable_due_to_assignment_flag of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1477,6 +1570,7 @@ class WatchlistMatch(object):
     def editable_due_to_assignment_flag(self, editable_due_to_assignment_flag):
         """Sets the editable_due_to_assignment_flag of this WatchlistMatch.
 
+          # noqa: E501
 
         :param editable_due_to_assignment_flag: The editable_due_to_assignment_flag of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1488,6 +1582,7 @@ class WatchlistMatch(object):
     def modify_date(self):
         """Gets the modify_date of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The modify_date of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1498,6 +1593,7 @@ class WatchlistMatch(object):
     def modify_date(self, modify_date):
         """Sets the modify_date of this WatchlistMatch.
 
+          # noqa: E501
 
         :param modify_date: The modify_date of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1509,6 +1605,7 @@ class WatchlistMatch(object):
     def modified_by_user(self):
         """Gets the modified_by_user of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The modified_by_user of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1519,6 +1616,7 @@ class WatchlistMatch(object):
     def modified_by_user(self, modified_by_user):
         """Sets the modified_by_user of this WatchlistMatch.
 
+          # noqa: E501
 
         :param modified_by_user: The modified_by_user of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1530,6 +1628,7 @@ class WatchlistMatch(object):
     def pair_report_type(self):
         """Gets the pair_report_type of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The pair_report_type of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1540,6 +1639,7 @@ class WatchlistMatch(object):
     def pair_report_type(self, pair_report_type):
         """Sets the pair_report_type of this WatchlistMatch.
 
+          # noqa: E501
 
         :param pair_report_type: The pair_report_type of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1551,6 +1651,7 @@ class WatchlistMatch(object):
     def finscan_category(self):
         """Gets the finscan_category of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The finscan_category of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1561,6 +1662,7 @@ class WatchlistMatch(object):
     def finscan_category(self, finscan_category):
         """Sets the finscan_category of this WatchlistMatch.
 
+          # noqa: E501
 
         :param finscan_category: The finscan_category of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1572,6 +1674,7 @@ class WatchlistMatch(object):
     def wrapper_status(self):
         """Gets the wrapper_status of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The wrapper_status of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1582,6 +1685,7 @@ class WatchlistMatch(object):
     def wrapper_status(self, wrapper_status):
         """Sets the wrapper_status of this WatchlistMatch.
 
+          # noqa: E501
 
         :param wrapper_status: The wrapper_status of this WatchlistMatch.  # noqa: E501
         :type: str
@@ -1593,6 +1697,7 @@ class WatchlistMatch(object):
     def source_lists(self):
         """Gets the source_lists of this WatchlistMatch.  # noqa: E501
 
+          # noqa: E501
 
         :return: The source_lists of this WatchlistMatch.  # noqa: E501
         :rtype: str
@@ -1603,6 +1708,7 @@ class WatchlistMatch(object):
     def source_lists(self, source_lists):
         """Sets the source_lists of this WatchlistMatch.
 
+          # noqa: E501
 
         :param source_lists: The source_lists of this WatchlistMatch.  # noqa: E501
         :type: str

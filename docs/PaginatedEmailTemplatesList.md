@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | **object** |  | 
-**email_templates** | **list[object]** |  | 
+**pagination** | [**Pagination**](Pagination.md) |  | 
+**email_templates** | [**list[EmailTemplate]**](EmailTemplate.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

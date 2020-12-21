@@ -57,7 +57,7 @@ class InvitesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: InviteDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -86,7 +86,7 @@ class InvitesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(InviteDetail, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -161,7 +161,7 @@ class InvitesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='InviteDetail',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -188,7 +188,7 @@ class InvitesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: InviteDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -216,7 +216,7 @@ class InvitesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(InviteDetail, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -280,7 +280,7 @@ class InvitesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='InviteDetail',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -691,18 +691,18 @@ class InvitesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_invite(self, invite_id, invite_create_params1, **kwargs):  # noqa: E501
+    def update_invite(self, invite_id, invite_update_params, **kwargs):  # noqa: E501
         """Update an Invite  # noqa: E501
 
         Updates an existing `Invite`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_invite(invite_id, invite_create_params1, async_req=True)
+        >>> thread = api.update_invite(invite_id, invite_update_params, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str invite_id: (required)
-        :param InviteCreateParams1 invite_create_params1: (required)
+        :param InviteUpdateParams invite_update_params: Updated `Invite` information. (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -711,25 +711,25 @@ class InvitesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: InviteDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_invite_with_http_info(invite_id, invite_create_params1, **kwargs)  # noqa: E501
+        return self.update_invite_with_http_info(invite_id, invite_update_params, **kwargs)  # noqa: E501
 
-    def update_invite_with_http_info(self, invite_id, invite_create_params1, **kwargs):  # noqa: E501
+    def update_invite_with_http_info(self, invite_id, invite_update_params, **kwargs):  # noqa: E501
         """Update an Invite  # noqa: E501
 
         Updates an existing `Invite`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_invite_with_http_info(invite_id, invite_create_params1, async_req=True)
+        >>> thread = api.update_invite_with_http_info(invite_id, invite_update_params, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str invite_id: (required)
-        :param InviteCreateParams1 invite_create_params1: (required)
+        :param InviteUpdateParams invite_update_params: Updated `Invite` information. (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -740,7 +740,7 @@ class InvitesApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(InviteDetail, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -749,7 +749,7 @@ class InvitesApi(object):
 
         all_params = [
             'invite_id',
-            'invite_create_params1',
+            'invite_update_params',
             'idempotency_key'
         ]
         all_params.extend(
@@ -773,10 +773,10 @@ class InvitesApi(object):
         if self.api_client.client_side_validation and ('invite_id' not in local_var_params or  # noqa: E501
                                                         local_var_params['invite_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `invite_id` when calling `update_invite`")  # noqa: E501
-        # verify the required parameter 'invite_create_params1' is set
-        if self.api_client.client_side_validation and ('invite_create_params1' not in local_var_params or  # noqa: E501
-                                                        local_var_params['invite_create_params1'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `invite_create_params1` when calling `update_invite`")  # noqa: E501
+        # verify the required parameter 'invite_update_params' is set
+        if self.api_client.client_side_validation and ('invite_update_params' not in local_var_params or  # noqa: E501
+                                                        local_var_params['invite_update_params'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `invite_update_params` when calling `update_invite`")  # noqa: E501
 
         collection_formats = {}
 
@@ -794,8 +794,8 @@ class InvitesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'invite_create_params1' in local_var_params:
-            body_params = local_var_params['invite_create_params1']
+        if 'invite_update_params' in local_var_params:
+            body_params = local_var_params['invite_update_params']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -815,7 +815,7 @@ class InvitesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='InviteDetail',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

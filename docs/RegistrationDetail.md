@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **email** | **str** | E-mail | [optional] 
 **name** | **str** | Guest&#39;s name | [optional] 
 **created_at** | **datetime** | Datetime when registration was created | 
-**signin** | **object** |  | [optional] 
+**signin** | [**Signin**](Signin.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -56,7 +56,7 @@ class Configuration(object):
 
     _default = None
 
-    def __init__(self, host="https://tractionguest.ca/api/v3",
+    def __init__(self, host="https://us.tractionguest.com/api/v3",
                  api_key=None, api_key_prefix=None,
                  username=None, password=None,
                  discard_unknown_keys=False,
@@ -339,10 +339,9 @@ class Configuration(object):
                 'variables': {
                     'domain': {
                         'description': "No description provided",
-                        'default_value': "https://tractionguest.ca/api/v3",
+                        'default_value': "https://us.tractionguest.com/api/v3",
                         'enum_values': [
-                            "https://tractionguest.ca/api/v3",
-                            "https://dravaqa.tractionguest.ca/api/v3",
+                            "https://us.tractionguest.com/api/v3",
                             "http://localhost:3000/api/v3"
                         ]
                         }

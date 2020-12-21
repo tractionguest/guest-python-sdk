@@ -35,18 +35,18 @@ class Invite(object):
     """
     openapi_types = {
         'id': 'int',
-        'registration': 'object',
+        'registration': 'Registration',
         'mobile_number': 'str',
         'email': 'str',
         'end_date': 'datetime',
-        'invite_watchlist': 'object',
-        'hosts': 'list[object]',
+        'invite_watchlist': 'InviteWatchlist',
+        'hosts': 'list[Host]',
         'watchlist_colour': 'str',
-        'location': 'object',
+        'location': 'Location',
         'start_date': 'datetime',
         'last_name': 'str',
         'first_name': 'str',
-        'group_visit': 'object'
+        'group_visit': 'GroupVisit'
     }
 
     attribute_map = {
@@ -135,7 +135,7 @@ class Invite(object):
 
 
         :return: The registration of this Invite.  # noqa: E501
-        :rtype: object
+        :rtype: Registration
         """
         return self._registration
 
@@ -145,7 +145,7 @@ class Invite(object):
 
 
         :param registration: The registration of this Invite.  # noqa: E501
-        :type: object
+        :type: Registration
         """
 
         self._registration = registration
@@ -154,6 +154,7 @@ class Invite(object):
     def mobile_number(self):
         """Gets the mobile_number of this Invite.  # noqa: E501
 
+          # noqa: E501
 
         :return: The mobile_number of this Invite.  # noqa: E501
         :rtype: str
@@ -164,6 +165,7 @@ class Invite(object):
     def mobile_number(self, mobile_number):
         """Sets the mobile_number of this Invite.
 
+          # noqa: E501
 
         :param mobile_number: The mobile_number of this Invite.  # noqa: E501
         :type: str
@@ -175,6 +177,7 @@ class Invite(object):
     def email(self):
         """Gets the email of this Invite.  # noqa: E501
 
+          # noqa: E501
 
         :return: The email of this Invite.  # noqa: E501
         :rtype: str
@@ -185,6 +188,7 @@ class Invite(object):
     def email(self, email):
         """Sets the email of this Invite.
 
+          # noqa: E501
 
         :param email: The email of this Invite.  # noqa: E501
         :type: str
@@ -196,6 +200,7 @@ class Invite(object):
     def end_date(self):
         """Gets the end_date of this Invite.  # noqa: E501
 
+          # noqa: E501
 
         :return: The end_date of this Invite.  # noqa: E501
         :rtype: datetime
@@ -206,6 +211,7 @@ class Invite(object):
     def end_date(self, end_date):
         """Sets the end_date of this Invite.
 
+          # noqa: E501
 
         :param end_date: The end_date of this Invite.  # noqa: E501
         :type: datetime
@@ -219,7 +225,7 @@ class Invite(object):
 
 
         :return: The invite_watchlist of this Invite.  # noqa: E501
-        :rtype: object
+        :rtype: InviteWatchlist
         """
         return self._invite_watchlist
 
@@ -229,7 +235,7 @@ class Invite(object):
 
 
         :param invite_watchlist: The invite_watchlist of this Invite.  # noqa: E501
-        :type: object
+        :type: InviteWatchlist
         """
 
         self._invite_watchlist = invite_watchlist
@@ -240,7 +246,7 @@ class Invite(object):
 
 
         :return: The hosts of this Invite.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[Host]
         """
         return self._hosts
 
@@ -250,7 +256,7 @@ class Invite(object):
 
 
         :param hosts: The hosts of this Invite.  # noqa: E501
-        :type: list[object]
+        :type: list[Host]
         """
 
         self._hosts = hosts
@@ -288,7 +294,7 @@ class Invite(object):
 
 
         :return: The location of this Invite.  # noqa: E501
-        :rtype: object
+        :rtype: Location
         """
         return self._location
 
@@ -298,7 +304,7 @@ class Invite(object):
 
 
         :param location: The location of this Invite.  # noqa: E501
-        :type: object
+        :type: Location
         """
 
         self._location = location
@@ -372,7 +378,7 @@ class Invite(object):
 
 
         :return: The group_visit of this Invite.  # noqa: E501
-        :rtype: object
+        :rtype: GroupVisit
         """
         return self._group_visit
 
@@ -382,7 +388,7 @@ class Invite(object):
 
 
         :param group_visit: The group_visit of this Invite.  # noqa: E501
-        :type: object
+        :type: GroupVisit
         """
 
         self._group_visit = group_visit

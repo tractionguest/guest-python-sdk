@@ -193,6 +193,7 @@ class Host(object):
     def department(self):
         """Gets the department of this Host.  # noqa: E501
 
+          # noqa: E501
 
         :return: The department of this Host.  # noqa: E501
         :rtype: str
@@ -203,6 +204,7 @@ class Host(object):
     def department(self, department):
         """Sets the department of this Host.
 
+          # noqa: E501
 
         :param department: The department of this Host.  # noqa: E501
         :type: str

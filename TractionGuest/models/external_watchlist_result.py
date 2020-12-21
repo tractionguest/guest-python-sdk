@@ -93,6 +93,7 @@ class ExternalWatchlistResult(object):
     def colour(self):
         """Gets the colour of this ExternalWatchlistResult.  # noqa: E501
 
+          # noqa: E501
 
         :return: The colour of this ExternalWatchlistResult.  # noqa: E501
         :rtype: str
@@ -103,6 +104,7 @@ class ExternalWatchlistResult(object):
     def colour(self, colour):
         """Sets the colour of this ExternalWatchlistResult.
 
+          # noqa: E501
 
         :param colour: The colour of this ExternalWatchlistResult.  # noqa: E501
         :type: str
@@ -120,6 +122,7 @@ class ExternalWatchlistResult(object):
     def integration(self):
         """Gets the integration of this ExternalWatchlistResult.  # noqa: E501
 
+          # noqa: E501
 
         :return: The integration of this ExternalWatchlistResult.  # noqa: E501
         :rtype: str
@@ -130,6 +133,7 @@ class ExternalWatchlistResult(object):
     def integration(self, integration):
         """Sets the integration of this ExternalWatchlistResult.
 
+          # noqa: E501
 
         :param integration: The integration of this ExternalWatchlistResult.  # noqa: E501
         :type: str

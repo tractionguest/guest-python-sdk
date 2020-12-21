@@ -5,8 +5,8 @@ The root of the InviteWatchlist type's schema.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**internal** | **list[object]** |  | [optional] 
-**external** | **list[object]** |  | [optional] 
+**internal** | [**list[InternalWatchlistResult]**](InternalWatchlistResult.md) |  | [optional] 
+**external** | [**list[ExternalWatchlistResult]**](ExternalWatchlistResult.md) |  | [optional] 
 **internal_colours** | **list[str]** | Deprecated | [optional] 
 **external_colours** | **list[str]** | Deprecated | [optional] 
 

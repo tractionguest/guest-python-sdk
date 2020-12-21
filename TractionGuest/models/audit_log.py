@@ -111,6 +111,7 @@ class AuditLog(object):
     def id(self):
         """Gets the id of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The id of this AuditLog.  # noqa: E501
         :rtype: int
@@ -121,6 +122,7 @@ class AuditLog(object):
     def id(self, id):
         """Sets the id of this AuditLog.
 
+          # noqa: E501
 
         :param id: The id of this AuditLog.  # noqa: E501
         :type: int
@@ -134,6 +136,7 @@ class AuditLog(object):
     def created_at(self):
         """Gets the created_at of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The created_at of this AuditLog.  # noqa: E501
         :rtype: str
@@ -144,6 +147,7 @@ class AuditLog(object):
     def created_at(self, created_at):
         """Sets the created_at of this AuditLog.
 
+          # noqa: E501
 
         :param created_at: The created_at of this AuditLog.  # noqa: E501
         :type: str
@@ -155,6 +159,7 @@ class AuditLog(object):
     def request_uuid(self):
         """Gets the request_uuid of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The request_uuid of this AuditLog.  # noqa: E501
         :rtype: str
@@ -165,6 +170,7 @@ class AuditLog(object):
     def request_uuid(self, request_uuid):
         """Sets the request_uuid of this AuditLog.
 
+          # noqa: E501
 
         :param request_uuid: The request_uuid of this AuditLog.  # noqa: E501
         :type: str
@@ -176,6 +182,7 @@ class AuditLog(object):
     def remote_address(self):
         """Gets the remote_address of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The remote_address of this AuditLog.  # noqa: E501
         :rtype: str
@@ -186,6 +193,7 @@ class AuditLog(object):
     def remote_address(self, remote_address):
         """Sets the remote_address of this AuditLog.
 
+          # noqa: E501
 
         :param remote_address: The remote_address of this AuditLog.  # noqa: E501
         :type: str
@@ -197,6 +205,7 @@ class AuditLog(object):
     def comment(self):
         """Gets the comment of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The comment of this AuditLog.  # noqa: E501
         :rtype: str
@@ -207,6 +216,7 @@ class AuditLog(object):
     def comment(self, comment):
         """Sets the comment of this AuditLog.
 
+          # noqa: E501
 
         :param comment: The comment of this AuditLog.  # noqa: E501
         :type: str
@@ -218,6 +228,7 @@ class AuditLog(object):
     def version(self):
         """Gets the version of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The version of this AuditLog.  # noqa: E501
         :rtype: int
@@ -228,6 +239,7 @@ class AuditLog(object):
     def version(self, version):
         """Sets the version of this AuditLog.
 
+          # noqa: E501
 
         :param version: The version of this AuditLog.  # noqa: E501
         :type: int
@@ -260,6 +272,7 @@ class AuditLog(object):
     def action(self):
         """Gets the action of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The action of this AuditLog.  # noqa: E501
         :rtype: str
@@ -270,6 +283,7 @@ class AuditLog(object):
     def action(self, action):
         """Sets the action of this AuditLog.
 
+          # noqa: E501
 
         :param action: The action of this AuditLog.  # noqa: E501
         :type: str
@@ -281,6 +295,7 @@ class AuditLog(object):
     def username(self):
         """Gets the username of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The username of this AuditLog.  # noqa: E501
         :rtype: str
@@ -291,6 +306,7 @@ class AuditLog(object):
     def username(self, username):
         """Sets the username of this AuditLog.
 
+          # noqa: E501
 
         :param username: The username of this AuditLog.  # noqa: E501
         :type: str
@@ -302,6 +318,7 @@ class AuditLog(object):
     def user_id(self):
         """Gets the user_id of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The user_id of this AuditLog.  # noqa: E501
         :rtype: int
@@ -312,6 +329,7 @@ class AuditLog(object):
     def user_id(self, user_id):
         """Sets the user_id of this AuditLog.
 
+          # noqa: E501
 
         :param user_id: The user_id of this AuditLog.  # noqa: E501
         :type: int
@@ -323,6 +341,7 @@ class AuditLog(object):
     def auditable_type(self):
         """Gets the auditable_type of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The auditable_type of this AuditLog.  # noqa: E501
         :rtype: str
@@ -333,6 +352,7 @@ class AuditLog(object):
     def auditable_type(self, auditable_type):
         """Sets the auditable_type of this AuditLog.
 
+          # noqa: E501
 
         :param auditable_type: The auditable_type of this AuditLog.  # noqa: E501
         :type: str
@@ -344,6 +364,7 @@ class AuditLog(object):
     def auditable_id(self):
         """Gets the auditable_id of this AuditLog.  # noqa: E501
 
+          # noqa: E501
 
         :return: The auditable_id of this AuditLog.  # noqa: E501
         :rtype: int
@@ -354,6 +375,7 @@ class AuditLog(object):
     def auditable_id(self, auditable_id):
         """Sets the auditable_id of this AuditLog.
 
+          # noqa: E501
 
         :param auditable_id: The auditable_id of this AuditLog.  # noqa: E501
         :type: int

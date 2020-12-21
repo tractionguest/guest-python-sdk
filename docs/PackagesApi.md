@@ -1,6 +1,6 @@
 # TractionGuest.PackagesApi
 
-All URIs are relative to *https://tractionguest.ca/api/v3*
+All URIs are relative to *https://us.tractionguest.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_package**
-> Package create_package(package_create_params_v1=package_create_params_v1)
+> Package create_package(package_create_params=package_create_params)
 
 Create package
 
@@ -28,18 +28,18 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.PackagesApi(api_client)
-    package_create_params_v1 = TractionGuest.PackageCreateParamsV1() # PackageCreateParamsV1 |  (optional)
+    package_create_params = TractionGuest.PackageCreateParams() # PackageCreateParams | Parameters for creating a package (optional)
 
     try:
         # Create package
-        api_response = api_instance.create_package(package_create_params_v1=package_create_params_v1)
+        api_response = api_instance.create_package(package_create_params=package_create_params)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PackagesApi->create_package: %s\n" % e)
@@ -49,7 +49,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **package_create_params_v1** | [**PackageCreateParamsV1**](PackageCreateParamsV1.md)|  | [optional] 
+ **package_create_params** | [**PackageCreateParams**](PackageCreateParams.md)| Parameters for creating a package | [optional] 
 
 ### Return type
 
@@ -89,8 +89,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -134,7 +134,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_package**
-> object get_package(package_id, include=include)
+> Package get_package(package_id, include=include)
 
 Get Package
 
@@ -150,8 +150,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**Package**](Package.md)
 
 ### Authorization
 
@@ -213,8 +213,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_package**
-> object update_package(package_id, idempotency_key=idempotency_key, package_update_params_v1=package_update_params_v1)
+> Package update_package(package_id, idempotency_key=idempotency_key, package_update_params=package_update_params)
 
 Update Package
 
@@ -284,8 +284,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -293,11 +293,11 @@ with TractionGuest.ApiClient(configuration) as api_client:
     api_instance = TractionGuest.PackagesApi(api_client)
     package_id = 'package_id_example' # str | 
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
-package_update_params_v1 = TractionGuest.PackageUpdateParamsV1() # PackageUpdateParamsV1 |  (optional)
+package_update_params = TractionGuest.PackageUpdateParams() # PackageUpdateParams |  (optional)
 
     try:
         # Update Package
-        api_response = api_instance.update_package(package_id, idempotency_key=idempotency_key, package_update_params_v1=package_update_params_v1)
+        api_response = api_instance.update_package(package_id, idempotency_key=idempotency_key, package_update_params=package_update_params)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PackagesApi->update_package: %s\n" % e)
@@ -309,11 +309,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **package_id** | **str**|  | 
  **idempotency_key** | **str**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] 
- **package_update_params_v1** | [**PackageUpdateParamsV1**](PackageUpdateParamsV1.md)|  | [optional] 
+ **package_update_params** | [**PackageUpdateParams**](PackageUpdateParams.md)|  | [optional] 
 
 ### Return type
 
-**object**
+[**Package**](Package.md)
 
 ### Authorization
 

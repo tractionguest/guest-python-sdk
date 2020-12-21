@@ -1,11 +1,12 @@
 # GroupVisit
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**location** | **object** |  | [optional] 
-**hosts** | **list[object]** |  | [optional] 
+**location** | [**Location**](Location.md) |  | [optional] 
+**hosts** | [**list[Host]**](Host.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **start_time** | **str** |  | [optional] 
 **end_time** | **str** |  | [optional] 

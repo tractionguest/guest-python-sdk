@@ -1,6 +1,6 @@
 # TractionGuest.WatchlistsApi
 
-All URIs are relative to *https://tractionguest.ca/api/v3*
+All URIs are relative to *https://us.tractionguest.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,14 +28,14 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.WatchlistsApi(api_client)
-    watchlist_create_params = TractionGuest.WatchlistCreateParams() # WatchlistCreateParams | 
+    watchlist_create_params = {"colour":"GREEN","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"]} # WatchlistCreateParams | The new `Watchlist` to create
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
@@ -50,7 +50,7 @@ idempotency_key = 'idempotency_key_example' # str | An optional idempotency key 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **watchlist_create_params** | [**WatchlistCreateParams**](WatchlistCreateParams.md)|  | 
+ **watchlist_create_params** | [**WatchlistCreateParams**](WatchlistCreateParams.md)| The new &#x60;Watchlist&#x60; to create | 
  **idempotency_key** | **str**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] 
 
 ### Return type
@@ -91,8 +91,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -137,7 +137,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_watchlist**
-> object get_watchlist(watchlist_id, include=include)
+> Watchlist get_watchlist(watchlist_id, include=include)
 
 Get a Watchlist
 
@@ -153,8 +153,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**Watchlist**](Watchlist.md)
 
 ### Authorization
 
@@ -216,8 +216,8 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_watchlist**
-> object update_watchlist(watchlist_id, body, idempotency_key=idempotency_key)
+> Watchlist update_watchlist(watchlist_id, watchlist_create_params, idempotency_key=idempotency_key)
 
 Update a Watchlist
 
@@ -285,20 +285,20 @@ from TractionGuest.rest import ApiException
 from pprint import pprint
 configuration = TractionGuest.Configuration()
 
-# Defining host is optional and default to https://tractionguest.ca/api/v3
-configuration.host = "https://tractionguest.ca/api/v3"
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.WatchlistsApi(api_client)
     watchlist_id = 'watchlist_id_example' # str | 
-body = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"]} # object | The watchlist record attributes to update
+watchlist_create_params = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"]} # WatchlistCreateParams | The watchlist record attributes to update
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
         # Update a Watchlist
-        api_response = api_instance.update_watchlist(watchlist_id, body, idempotency_key=idempotency_key)
+        api_response = api_instance.update_watchlist(watchlist_id, watchlist_create_params, idempotency_key=idempotency_key)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WatchlistsApi->update_watchlist: %s\n" % e)
@@ -309,12 +309,12 @@ idempotency_key = 'idempotency_key_example' # str | An optional idempotency key 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **watchlist_id** | **str**|  | 
- **body** | **object**| The watchlist record attributes to update | 
+ **watchlist_create_params** | [**WatchlistCreateParams**](WatchlistCreateParams.md)| The watchlist record attributes to update | 
  **idempotency_key** | **str**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] 
 
 ### Return type
 
-**object**
+[**Watchlist**](Watchlist.md)
 
 ### Authorization
 
