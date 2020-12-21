@@ -34,8 +34,8 @@ class PaginatedSigninsList(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'pagination': 'Pagination',
-        'signins': 'list[Signin]'
+        'pagination': 'object',
+        'signins': 'list[object]'
     }
 
     attribute_map = {
@@ -62,7 +62,7 @@ class PaginatedSigninsList(object):
 
 
         :return: The pagination of this PaginatedSigninsList.  # noqa: E501
-        :rtype: Pagination
+        :rtype: object
         """
         return self._pagination
 
@@ -72,7 +72,7 @@ class PaginatedSigninsList(object):
 
 
         :param pagination: The pagination of this PaginatedSigninsList.  # noqa: E501
-        :type: Pagination
+        :type: object
         """
         if self.local_vars_configuration.client_side_validation and pagination is None:  # noqa: E501
             raise ValueError("Invalid value for `pagination`, must not be `None`")  # noqa: E501
@@ -85,7 +85,7 @@ class PaginatedSigninsList(object):
 
 
         :return: The signins of this PaginatedSigninsList.  # noqa: E501
-        :rtype: list[Signin]
+        :rtype: list[object]
         """
         return self._signins
 
@@ -95,7 +95,7 @@ class PaginatedSigninsList(object):
 
 
         :param signins: The signins of this PaginatedSigninsList.  # noqa: E501
-        :type: list[Signin]
+        :type: list[object]
         """
         if self.local_vars_configuration.client_side_validation and signins is None:  # noqa: E501
             raise ValueError("Invalid value for `signins`, must not be `None`")  # noqa: E501

@@ -34,8 +34,8 @@ class PaginatedLocationsList(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'locations': 'list[Location]',
-        'pagination': 'Pagination'
+        'locations': 'list[object]',
+        'pagination': 'object'
     }
 
     attribute_map = {
@@ -62,7 +62,7 @@ class PaginatedLocationsList(object):
 
 
         :return: The locations of this PaginatedLocationsList.  # noqa: E501
-        :rtype: list[Location]
+        :rtype: list[object]
         """
         return self._locations
 
@@ -72,7 +72,7 @@ class PaginatedLocationsList(object):
 
 
         :param locations: The locations of this PaginatedLocationsList.  # noqa: E501
-        :type: list[Location]
+        :type: list[object]
         """
         if self.local_vars_configuration.client_side_validation and locations is None:  # noqa: E501
             raise ValueError("Invalid value for `locations`, must not be `None`")  # noqa: E501
@@ -85,7 +85,7 @@ class PaginatedLocationsList(object):
 
 
         :return: The pagination of this PaginatedLocationsList.  # noqa: E501
-        :rtype: Pagination
+        :rtype: object
         """
         return self._pagination
 
@@ -95,7 +95,7 @@ class PaginatedLocationsList(object):
 
 
         :param pagination: The pagination of this PaginatedLocationsList.  # noqa: E501
-        :type: Pagination
+        :type: object
         """
         if self.local_vars_configuration.client_side_validation and pagination is None:  # noqa: E501
             raise ValueError("Invalid value for `pagination`, must not be `None`")  # noqa: E501

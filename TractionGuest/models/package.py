@@ -35,13 +35,13 @@ class Package(object):
     """
     openapi_types = {
         'id': 'int',
-        'recipient': 'Host',
-        'location': 'Location',
+        'recipient': 'object',
+        'location': 'object',
         'package_state': 'str',
         'carrier_name': 'str',
         'picked_up_at': 'datetime',
         'created_at': 'datetime',
-        'image': 'Image'
+        'image': 'ImageV1'
     }
 
     attribute_map = {
@@ -112,7 +112,7 @@ class Package(object):
 
 
         :return: The recipient of this Package.  # noqa: E501
-        :rtype: Host
+        :rtype: object
         """
         return self._recipient
 
@@ -122,7 +122,7 @@ class Package(object):
 
 
         :param recipient: The recipient of this Package.  # noqa: E501
-        :type: Host
+        :type: object
         """
 
         self._recipient = recipient
@@ -133,7 +133,7 @@ class Package(object):
 
 
         :return: The location of this Package.  # noqa: E501
-        :rtype: Location
+        :rtype: object
         """
         return self._location
 
@@ -143,7 +143,7 @@ class Package(object):
 
 
         :param location: The location of this Package.  # noqa: E501
-        :type: Location
+        :type: object
         """
         if self.local_vars_configuration.client_side_validation and location is None:  # noqa: E501
             raise ValueError("Invalid value for `location`, must not be `None`")  # noqa: E501
@@ -254,7 +254,7 @@ class Package(object):
 
 
         :return: The image of this Package.  # noqa: E501
-        :rtype: Image
+        :rtype: ImageV1
         """
         return self._image
 
@@ -264,7 +264,7 @@ class Package(object):
 
 
         :param image: The image of this Package.  # noqa: E501
-        :type: Image
+        :type: ImageV1
         """
 
         self._image = image

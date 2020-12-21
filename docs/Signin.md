@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | 
 **mobile_number** | **str** |  | [optional] 
 **signin_watchlist** | [**SigninWatchlist**](SigninWatchlist.md) |  | [optional] 
-**hosts** | [**list[Host]**](Host.md) |  | 
+**hosts** | **list[object]** |  | 
 **signin_timestamp** | **datetime** |  | [optional] 
 **signin_photo_url** | **str** |  | [optional] 
 **signed_out_timestamp** | **datetime** |  | [optional] 

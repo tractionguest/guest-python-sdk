@@ -5,13 +5,13 @@ Root for a Package type's schema
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**recipient** | [**Host**](Host.md) |  | [optional] 
-**location** | [**Location**](Location.md) |  | 
+**recipient** | **object** |  | [optional] 
+**location** | **object** |  | 
 **package_state** | **str** | this can be one of the following states: &#39;processing&#39;, &#39;recipient_matched&#39;, &#39;needs_attention&#39; or &#39;picked_up&#39; | 
 **carrier_name** | **str** | A carrier name that gets detected on the shipping label. i.e. USPS, Purolator, DHL, Canada Post, Royal Mail, etc...  | [optional] 
 **picked_up_at** | **datetime** |  | [optional] 
 **created_at** | **datetime** |  | 
-**image** | [**Image**](Image.md) |  | [optional] 
+**image** | [**ImageV1**](ImageV1.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

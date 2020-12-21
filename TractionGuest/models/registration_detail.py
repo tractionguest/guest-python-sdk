@@ -43,7 +43,7 @@ class RegistrationDetail(object):
         'email': 'str',
         'name': 'str',
         'created_at': 'datetime',
-        'signin': 'Signin'
+        'signin': 'object'
     }
 
     attribute_map = {
@@ -305,7 +305,7 @@ class RegistrationDetail(object):
 
 
         :return: The signin of this RegistrationDetail.  # noqa: E501
-        :rtype: Signin
+        :rtype: object
         """
         return self._signin
 
@@ -315,7 +315,7 @@ class RegistrationDetail(object):
 
 
         :param signin: The signin of this RegistrationDetail.  # noqa: E501
-        :type: Signin
+        :type: object
         """
 
         self._signin = signin

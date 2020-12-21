@@ -1,6 +1,5 @@
 # WatchlistSearch
 
-
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

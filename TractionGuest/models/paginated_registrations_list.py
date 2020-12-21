@@ -34,8 +34,8 @@ class PaginatedRegistrationsList(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'registrations': 'list[Registration]',
-        'pagination': 'Pagination'
+        'registrations': 'list[object]',
+        'pagination': 'object'
     }
 
     attribute_map = {
@@ -64,7 +64,7 @@ class PaginatedRegistrationsList(object):
 
 
         :return: The registrations of this PaginatedRegistrationsList.  # noqa: E501
-        :rtype: list[Registration]
+        :rtype: list[object]
         """
         return self._registrations
 
@@ -74,7 +74,7 @@ class PaginatedRegistrationsList(object):
 
 
         :param registrations: The registrations of this PaginatedRegistrationsList.  # noqa: E501
-        :type: list[Registration]
+        :type: list[object]
         """
 
         self._registrations = registrations
@@ -85,7 +85,7 @@ class PaginatedRegistrationsList(object):
 
 
         :return: The pagination of this PaginatedRegistrationsList.  # noqa: E501
-        :rtype: Pagination
+        :rtype: object
         """
         return self._pagination
 
@@ -95,7 +95,7 @@ class PaginatedRegistrationsList(object):
 
 
         :param pagination: The pagination of this PaginatedRegistrationsList.  # noqa: E501
-        :type: Pagination
+        :type: object
         """
 
         self._pagination = pagination

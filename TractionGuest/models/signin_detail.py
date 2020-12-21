@@ -36,8 +36,8 @@ class SigninDetail(object):
     openapi_types = {
         'id': 'int',
         'documents': 'list[SignableDocument]',
-        'signin_watchlist': 'SigninWatchlist',
-        'hosts': 'list[Host]',
+        'signin_watchlist': 'object',
+        'hosts': 'list[object]',
         'signin_data': 'list[SigninData]',
         'signin_acknowledgement': 'SigninAcknowledgement',
         'note': 'str',
@@ -53,7 +53,7 @@ class SigninDetail(object):
         'first_name': 'str',
         'email': 'str',
         'company': 'str',
-        'registration': 'Registration'
+        'registration': 'object'
     }
 
     attribute_map = {
@@ -197,7 +197,7 @@ class SigninDetail(object):
 
 
         :return: The signin_watchlist of this SigninDetail.  # noqa: E501
-        :rtype: SigninWatchlist
+        :rtype: object
         """
         return self._signin_watchlist
 
@@ -207,7 +207,7 @@ class SigninDetail(object):
 
 
         :param signin_watchlist: The signin_watchlist of this SigninDetail.  # noqa: E501
-        :type: SigninWatchlist
+        :type: object
         """
 
         self._signin_watchlist = signin_watchlist
@@ -218,7 +218,7 @@ class SigninDetail(object):
 
 
         :return: The hosts of this SigninDetail.  # noqa: E501
-        :rtype: list[Host]
+        :rtype: list[object]
         """
         return self._hosts
 
@@ -228,7 +228,7 @@ class SigninDetail(object):
 
 
         :param hosts: The hosts of this SigninDetail.  # noqa: E501
-        :type: list[Host]
+        :type: list[object]
         """
 
         self._hosts = hosts
@@ -558,7 +558,7 @@ class SigninDetail(object):
 
 
         :return: The registration of this SigninDetail.  # noqa: E501
-        :rtype: Registration
+        :rtype: object
         """
         return self._registration
 
@@ -568,7 +568,7 @@ class SigninDetail(object):
 
 
         :param registration: The registration of this SigninDetail.  # noqa: E501
-        :type: Registration
+        :type: object
         """
 
         self._registration = registration

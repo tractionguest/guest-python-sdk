@@ -35,14 +35,14 @@ class Registration(object):
     """
     openapi_types = {
         'id': 'str',
-        'visitor': 'Visitor',
-        'invite': 'Invite',
+        'visitor': 'object',
+        'invite': 'object',
         'photo_url': 'str',
         'company': 'str',
         'email': 'str',
         'name': 'str',
         'created_at': 'datetime',
-        'signin': 'Signin'
+        'signin': 'object'
     }
 
     attribute_map = {
@@ -118,7 +118,7 @@ class Registration(object):
 
 
         :return: The visitor of this Registration.  # noqa: E501
-        :rtype: Visitor
+        :rtype: object
         """
         return self._visitor
 
@@ -128,7 +128,7 @@ class Registration(object):
 
 
         :param visitor: The visitor of this Registration.  # noqa: E501
-        :type: Visitor
+        :type: object
         """
 
         self._visitor = visitor
@@ -139,7 +139,7 @@ class Registration(object):
 
 
         :return: The invite of this Registration.  # noqa: E501
-        :rtype: Invite
+        :rtype: object
         """
         return self._invite
 
@@ -149,7 +149,7 @@ class Registration(object):
 
 
         :param invite: The invite of this Registration.  # noqa: E501
-        :type: Invite
+        :type: object
         """
 
         self._invite = invite
@@ -277,7 +277,7 @@ class Registration(object):
 
 
         :return: The signin of this Registration.  # noqa: E501
-        :rtype: Signin
+        :rtype: object
         """
         return self._signin
 
@@ -287,7 +287,7 @@ class Registration(object):
 
 
         :param signin: The signin of this Registration.  # noqa: E501
-        :type: Signin
+        :type: object
         """
 
         self._signin = signin

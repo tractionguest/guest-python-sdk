@@ -34,8 +34,8 @@ class PaginatedEmailTemplatesList(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'pagination': 'Pagination',
-        'email_templates': 'list[EmailTemplate]'
+        'pagination': 'object',
+        'email_templates': 'list[object]'
     }
 
     attribute_map = {
@@ -62,7 +62,7 @@ class PaginatedEmailTemplatesList(object):
 
 
         :return: The pagination of this PaginatedEmailTemplatesList.  # noqa: E501
-        :rtype: Pagination
+        :rtype: object
         """
         return self._pagination
 
@@ -72,7 +72,7 @@ class PaginatedEmailTemplatesList(object):
 
 
         :param pagination: The pagination of this PaginatedEmailTemplatesList.  # noqa: E501
-        :type: Pagination
+        :type: object
         """
         if self.local_vars_configuration.client_side_validation and pagination is None:  # noqa: E501
             raise ValueError("Invalid value for `pagination`, must not be `None`")  # noqa: E501
@@ -85,7 +85,7 @@ class PaginatedEmailTemplatesList(object):
 
 
         :return: The email_templates of this PaginatedEmailTemplatesList.  # noqa: E501
-        :rtype: list[EmailTemplate]
+        :rtype: list[object]
         """
         return self._email_templates
 
@@ -95,7 +95,7 @@ class PaginatedEmailTemplatesList(object):
 
 
         :param email_templates: The email_templates of this PaginatedEmailTemplatesList.  # noqa: E501
-        :type: list[EmailTemplate]
+        :type: list[object]
         """
         if self.local_vars_configuration.client_side_validation and email_templates is None:  # noqa: E501
             raise ValueError("Invalid value for `email_templates`, must not be `None`")  # noqa: E501

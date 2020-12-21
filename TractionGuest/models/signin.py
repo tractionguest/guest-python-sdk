@@ -37,7 +37,7 @@ class Signin(object):
         'id': 'int',
         'mobile_number': 'str',
         'signin_watchlist': 'SigninWatchlist',
-        'hosts': 'list[Host]',
+        'hosts': 'list[object]',
         'signin_timestamp': 'datetime',
         'signin_photo_url': 'str',
         'signed_out_timestamp': 'datetime',
@@ -192,7 +192,7 @@ class Signin(object):
 
 
         :return: The hosts of this Signin.  # noqa: E501
-        :rtype: list[Host]
+        :rtype: list[object]
         """
         return self._hosts
 
@@ -202,7 +202,7 @@ class Signin(object):
 
 
         :param hosts: The hosts of this Signin.  # noqa: E501
-        :type: list[Host]
+        :type: list[object]
         """
         if self.local_vars_configuration.client_side_validation and hosts is None:  # noqa: E501
             raise ValueError("Invalid value for `hosts`, must not be `None`")  # noqa: E501

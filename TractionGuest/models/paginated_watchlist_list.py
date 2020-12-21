@@ -34,8 +34,8 @@ class PaginatedWatchlistList(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'watchlists': 'list[Watchlist]',
-        'pagination': 'Pagination'
+        'watchlists': 'list[object]',
+        'pagination': 'object'
     }
 
     attribute_map = {
@@ -62,7 +62,7 @@ class PaginatedWatchlistList(object):
 
 
         :return: The watchlists of this PaginatedWatchlistList.  # noqa: E501
-        :rtype: list[Watchlist]
+        :rtype: list[object]
         """
         return self._watchlists
 
@@ -72,7 +72,7 @@ class PaginatedWatchlistList(object):
 
 
         :param watchlists: The watchlists of this PaginatedWatchlistList.  # noqa: E501
-        :type: list[Watchlist]
+        :type: list[object]
         """
         if self.local_vars_configuration.client_side_validation and watchlists is None:  # noqa: E501
             raise ValueError("Invalid value for `watchlists`, must not be `None`")  # noqa: E501
@@ -85,7 +85,7 @@ class PaginatedWatchlistList(object):
 
 
         :return: The pagination of this PaginatedWatchlistList.  # noqa: E501
-        :rtype: Pagination
+        :rtype: object
         """
         return self._pagination
 
@@ -95,7 +95,7 @@ class PaginatedWatchlistList(object):
 
 
         :param pagination: The pagination of this PaginatedWatchlistList.  # noqa: E501
-        :type: Pagination
+        :type: object
         """
         if self.local_vars_configuration.client_side_validation and pagination is None:  # noqa: E501
             raise ValueError("Invalid value for `pagination`, must not be `None`")  # noqa: E501

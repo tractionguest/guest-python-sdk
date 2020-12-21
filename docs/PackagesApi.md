@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_package**
-> Package create_package(package_create_params=package_create_params)
+> Package create_package(package_create_params_v1=package_create_params_v1)
 
 Create package
 
@@ -35,11 +35,11 @@ configuration.host = "https://tractionguest.ca/api/v3"
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.PackagesApi(api_client)
-    package_create_params = TractionGuest.PackageCreateParams() # PackageCreateParams | Parameters for creating a package (optional)
+    package_create_params_v1 = TractionGuest.PackageCreateParamsV1() # PackageCreateParamsV1 |  (optional)
 
     try:
         # Create package
-        api_response = api_instance.create_package(package_create_params=package_create_params)
+        api_response = api_instance.create_package(package_create_params_v1=package_create_params_v1)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PackagesApi->create_package: %s\n" % e)
@@ -49,7 +49,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **package_create_params** | [**PackageCreateParams**](PackageCreateParams.md)| Parameters for creating a package | [optional] 
+ **package_create_params_v1** | [**PackageCreateParamsV1**](PackageCreateParamsV1.md)|  | [optional] 
 
 ### Return type
 
@@ -134,7 +134,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_package**
-> Package get_package(package_id, include=include)
+> object get_package(package_id, include=include)
 
 Get Package
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Package**](Package.md)
+**object**
 
 ### Authorization
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_package**
-> Package update_package(package_id, idempotency_key=idempotency_key, package_update_params=package_update_params)
+> object update_package(package_id, idempotency_key=idempotency_key, package_update_params_v1=package_update_params_v1)
 
 Update Package
 
@@ -293,11 +293,11 @@ with TractionGuest.ApiClient(configuration) as api_client:
     api_instance = TractionGuest.PackagesApi(api_client)
     package_id = 'package_id_example' # str | 
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
-package_update_params = TractionGuest.PackageUpdateParams() # PackageUpdateParams |  (optional)
+package_update_params_v1 = TractionGuest.PackageUpdateParamsV1() # PackageUpdateParamsV1 |  (optional)
 
     try:
         # Update Package
-        api_response = api_instance.update_package(package_id, idempotency_key=idempotency_key, package_update_params=package_update_params)
+        api_response = api_instance.update_package(package_id, idempotency_key=idempotency_key, package_update_params_v1=package_update_params_v1)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PackagesApi->update_package: %s\n" % e)
@@ -309,11 +309,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **package_id** | **str**|  | 
  **idempotency_key** | **str**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] 
- **package_update_params** | [**PackageUpdateParams**](PackageUpdateParams.md)|  | [optional] 
+ **package_update_params_v1** | [**PackageUpdateParamsV1**](PackageUpdateParamsV1.md)|  | [optional] 
 
 ### Return type
 
-[**Package**](Package.md)
+**object**
 
 ### Authorization
 

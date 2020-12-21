@@ -39,7 +39,7 @@ class BatchJob(object):
         'status': 'str',
         'total_records': 'int',
         'worker_name': 'str',
-        'user': 'User'
+        'user': 'object'
     }
 
     attribute_map = {
@@ -189,7 +189,7 @@ class BatchJob(object):
 
 
         :return: The user of this BatchJob.  # noqa: E501
-        :rtype: User
+        :rtype: object
         """
         return self._user
 
@@ -199,7 +199,7 @@ class BatchJob(object):
 
 
         :param user: The user of this BatchJob.  # noqa: E501
-        :type: User
+        :type: object
         """
 
         self._user = user

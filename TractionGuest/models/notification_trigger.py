@@ -36,7 +36,7 @@ class NotificationTrigger(object):
     openapi_types = {
         'offset_direction': 'str',
         'offset_amount': 'int',
-        'offset_origin': 'object',
+        'offset_origin': 'str',
         'email_template_id': 'int',
         'notification_groups': 'list[str]',
         'offset_unit': 'str',
@@ -139,7 +139,7 @@ class NotificationTrigger(object):
         Whether the offset should be calculated from the start, or finish of the event  # noqa: E501
 
         :return: The offset_origin of this NotificationTrigger.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._offset_origin
 
@@ -150,11 +150,11 @@ class NotificationTrigger(object):
         Whether the offset should be calculated from the start, or finish of the event  # noqa: E501
 
         :param offset_origin: The offset_origin of this NotificationTrigger.  # noqa: E501
-        :type: object
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and offset_origin is None:  # noqa: E501
             raise ValueError("Invalid value for `offset_origin`, must not be `None`")  # noqa: E501
-        allowed_values = [START, END]  # noqa: E501
+        allowed_values = ["START", "END"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and offset_origin not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `offset_origin` ({0}), must be one of {1}"  # noqa: E501

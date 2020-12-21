@@ -72,7 +72,6 @@ class SimpleSignature(object):
     def status(self):
         """Gets the status of this SimpleSignature.  # noqa: E501
 
-          # noqa: E501
 
         :return: The status of this SimpleSignature.  # noqa: E501
         :rtype: str
@@ -83,7 +82,6 @@ class SimpleSignature(object):
     def status(self, status):
         """Sets the status of this SimpleSignature.
 
-          # noqa: E501
 
         :param status: The status of this SimpleSignature.  # noqa: E501
         :type: str
@@ -95,7 +93,6 @@ class SimpleSignature(object):
     def template_name(self):
         """Gets the template_name of this SimpleSignature.  # noqa: E501
 
-          # noqa: E501
 
         :return: The template_name of this SimpleSignature.  # noqa: E501
         :rtype: str
@@ -106,7 +103,6 @@ class SimpleSignature(object):
     def template_name(self, template_name):
         """Sets the template_name of this SimpleSignature.
 
-          # noqa: E501
 
         :param template_name: The template_name of this SimpleSignature.  # noqa: E501
         :type: str
@@ -118,7 +114,6 @@ class SimpleSignature(object):
     def id(self):
         """Gets the id of this SimpleSignature.  # noqa: E501
 
-          # noqa: E501
 
         :return: The id of this SimpleSignature.  # noqa: E501
         :rtype: str
@@ -129,7 +124,6 @@ class SimpleSignature(object):
     def id(self, id):
         """Sets the id of this SimpleSignature.
 
-          # noqa: E501
 
         :param id: The id of this SimpleSignature.  # noqa: E501
         :type: str
@@ -141,7 +135,6 @@ class SimpleSignature(object):
     def title(self):
         """Gets the title of this SimpleSignature.  # noqa: E501
 
-          # noqa: E501
 
         :return: The title of this SimpleSignature.  # noqa: E501
         :rtype: str
@@ -152,7 +145,6 @@ class SimpleSignature(object):
     def title(self, title):
         """Sets the title of this SimpleSignature.
 
-          # noqa: E501
 
         :param title: The title of this SimpleSignature.  # noqa: E501
         :type: str

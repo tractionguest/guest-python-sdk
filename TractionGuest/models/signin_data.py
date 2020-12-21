@@ -34,7 +34,7 @@ class SigninData(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'custom_fields': 'list[CustomField]',
+        'custom_fields': 'list[object]',
         'name': 'str'
     }
 
@@ -64,7 +64,7 @@ class SigninData(object):
 
 
         :return: The custom_fields of this SigninData.  # noqa: E501
-        :rtype: list[CustomField]
+        :rtype: list[object]
         """
         return self._custom_fields
 
@@ -74,7 +74,7 @@ class SigninData(object):
 
 
         :param custom_fields: The custom_fields of this SigninData.  # noqa: E501
-        :type: list[CustomField]
+        :type: list[object]
         """
 
         self._custom_fields = custom_fields

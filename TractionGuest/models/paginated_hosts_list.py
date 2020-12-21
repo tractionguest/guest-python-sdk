@@ -35,7 +35,7 @@ class PaginatedHostsList(object):
     """
     openapi_types = {
         'pagination': 'Pagination',
-        'hosts': 'list[Host]'
+        'hosts': 'list[object]'
     }
 
     attribute_map = {
@@ -85,7 +85,7 @@ class PaginatedHostsList(object):
 
 
         :return: The hosts of this PaginatedHostsList.  # noqa: E501
-        :rtype: list[Host]
+        :rtype: list[object]
         """
         return self._hosts
 
@@ -95,7 +95,7 @@ class PaginatedHostsList(object):
 
 
         :param hosts: The hosts of this PaginatedHostsList.  # noqa: E501
-        :type: list[Host]
+        :type: list[object]
         """
         if self.local_vars_configuration.client_side_validation and hosts is None:  # noqa: E501
             raise ValueError("Invalid value for `hosts`, must not be `None`")  # noqa: E501

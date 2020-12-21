@@ -1,6 +1,5 @@
 # SigninCreateParams
 
-
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

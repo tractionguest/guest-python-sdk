@@ -47,7 +47,7 @@ class SigninsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param SigninCreateParams signin_create_params: Params for creating a Signin can omit certain fields if a `registration_id` is present.
+        :param SigninCreateParams signin_create_params:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -72,7 +72,7 @@ class SigninsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param SigninCreateParams signin_create_params: Params for creating a Signin can omit certain fields if a `registration_id` is present.
+        :param SigninCreateParams signin_create_params:
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -441,7 +441,7 @@ class SigninsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str signin_id: (required)
-        :param SigninUpdateParams signin_update_params: The only updatable values for a `Signin` are `badge_number`, `badge_returned`, `is_accounted_for`, `is_signed_out`, and `is_acknowledged`.  `is_signed_out` and `is_acknowledged` are pseudo attributes that once set to true, are irreversible. (required)
+        :param SigninUpdateParams signin_update_params: (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -450,7 +450,7 @@ class SigninsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: SigninDetail
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -468,7 +468,7 @@ class SigninsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str signin_id: (required)
-        :param SigninUpdateParams signin_update_params: The only updatable values for a `Signin` are `badge_number`, `badge_returned`, `is_accounted_for`, `is_signed_out`, and `is_acknowledged`.  `is_signed_out` and `is_acknowledged` are pseudo attributes that once set to true, are irreversible. (required)
+        :param SigninUpdateParams signin_update_params: (required)
         :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -479,7 +479,7 @@ class SigninsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(SigninDetail, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -554,7 +554,7 @@ class SigninsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SigninDetail',  # noqa: E501
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

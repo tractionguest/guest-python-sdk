@@ -97,7 +97,6 @@ class Docusign(object):
     def template_id(self):
         """Gets the template_id of this Docusign.  # noqa: E501
 
-          # noqa: E501
 
         :return: The template_id of this Docusign.  # noqa: E501
         :rtype: str
@@ -108,7 +107,6 @@ class Docusign(object):
     def template_id(self, template_id):
         """Sets the template_id of this Docusign.
 
-          # noqa: E501
 
         :param template_id: The template_id of this Docusign.  # noqa: E501
         :type: str
@@ -120,7 +118,6 @@ class Docusign(object):
     def integration(self):
         """Gets the integration of this Docusign.  # noqa: E501
 
-          # noqa: E501
 
         :return: The integration of this Docusign.  # noqa: E501
         :rtype: str
@@ -131,7 +128,6 @@ class Docusign(object):
     def integration(self, integration):
         """Sets the integration of this Docusign.
 
-          # noqa: E501
 
         :param integration: The integration of this Docusign.  # noqa: E501
         :type: str
@@ -143,7 +139,6 @@ class Docusign(object):
     def nda_status(self):
         """Gets the nda_status of this Docusign.  # noqa: E501
 
-          # noqa: E501
 
         :return: The nda_status of this Docusign.  # noqa: E501
         :rtype: str
@@ -154,7 +149,6 @@ class Docusign(object):
     def nda_status(self, nda_status):
         """Sets the nda_status of this Docusign.
 
-          # noqa: E501
 
         :param nda_status: The nda_status of this Docusign.  # noqa: E501
         :type: str
@@ -166,7 +160,6 @@ class Docusign(object):
     def nda_signed_date(self):
         """Gets the nda_signed_date of this Docusign.  # noqa: E501
 
-          # noqa: E501
 
         :return: The nda_signed_date of this Docusign.  # noqa: E501
         :rtype: datetime
@@ -177,7 +170,6 @@ class Docusign(object):
     def nda_signed_date(self, nda_signed_date):
         """Sets the nda_signed_date of this Docusign.
 
-          # noqa: E501
 
         :param nda_signed_date: The nda_signed_date of this Docusign.  # noqa: E501
         :type: datetime
@@ -189,7 +181,6 @@ class Docusign(object):
     def envelope_id(self):
         """Gets the envelope_id of this Docusign.  # noqa: E501
 
-          # noqa: E501
 
         :return: The envelope_id of this Docusign.  # noqa: E501
         :rtype: str
@@ -200,7 +191,6 @@ class Docusign(object):
     def envelope_id(self, envelope_id):
         """Sets the envelope_id of this Docusign.
 
-          # noqa: E501
 
         :param envelope_id: The envelope_id of this Docusign.  # noqa: E501
         :type: str
@@ -212,7 +202,6 @@ class Docusign(object):
     def sequence(self):
         """Gets the sequence of this Docusign.  # noqa: E501
 
-          # noqa: E501
 
         :return: The sequence of this Docusign.  # noqa: E501
         :rtype: str
@@ -223,7 +212,6 @@ class Docusign(object):
     def sequence(self, sequence):
         """Sets the sequence of this Docusign.
 
-          # noqa: E501
 
         :param sequence: The sequence of this Docusign.  # noqa: E501
         :type: str
@@ -235,7 +223,6 @@ class Docusign(object):
     def docusign_id(self):
         """Gets the docusign_id of this Docusign.  # noqa: E501
 
-          # noqa: E501
 
         :return: The docusign_id of this Docusign.  # noqa: E501
         :rtype: str
@@ -246,7 +233,6 @@ class Docusign(object):
     def docusign_id(self, docusign_id):
         """Sets the docusign_id of this Docusign.
 
-          # noqa: E501
 
         :param docusign_id: The docusign_id of this Docusign.  # noqa: E501
         :type: str
@@ -258,7 +244,6 @@ class Docusign(object):
     def docusign_name(self):
         """Gets the docusign_name of this Docusign.  # noqa: E501
 
-          # noqa: E501
 
         :return: The docusign_name of this Docusign.  # noqa: E501
         :rtype: str
@@ -269,7 +254,6 @@ class Docusign(object):
     def docusign_name(self, docusign_name):
         """Sets the docusign_name of this Docusign.
 
-          # noqa: E501
 
         :param docusign_name: The docusign_name of this Docusign.  # noqa: E501
         :type: str
@@ -281,7 +265,6 @@ class Docusign(object):
     def title(self):
         """Gets the title of this Docusign.  # noqa: E501
 
-          # noqa: E501
 
         :return: The title of this Docusign.  # noqa: E501
         :rtype: str
@@ -292,7 +275,6 @@ class Docusign(object):
     def title(self, title):
         """Sets the title of this Docusign.
 
-          # noqa: E501
 
         :param title: The title of this Docusign.  # noqa: E501
         :type: str

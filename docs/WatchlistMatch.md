@@ -1,6 +1,5 @@
 # WatchlistMatch
 
-
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -35,8 +35,8 @@ class InviteWatchlist(object):
     """
     openapi_types = {
         'id': 'int',
-        'internal': 'list[InternalWatchlistResult]',
-        'external': 'list[ExternalWatchlistResult]',
+        'internal': 'list[object]',
+        'external': 'list[object]',
         'internal_colours': 'list[str]',
         'external_colours': 'list[str]'
     }
@@ -101,7 +101,7 @@ class InviteWatchlist(object):
 
 
         :return: The internal of this InviteWatchlist.  # noqa: E501
-        :rtype: list[InternalWatchlistResult]
+        :rtype: list[object]
         """
         return self._internal
 
@@ -111,7 +111,7 @@ class InviteWatchlist(object):
 
 
         :param internal: The internal of this InviteWatchlist.  # noqa: E501
-        :type: list[InternalWatchlistResult]
+        :type: list[object]
         """
 
         self._internal = internal
@@ -122,7 +122,7 @@ class InviteWatchlist(object):
 
 
         :return: The external of this InviteWatchlist.  # noqa: E501
-        :rtype: list[ExternalWatchlistResult]
+        :rtype: list[object]
         """
         return self._external
 
@@ -132,7 +132,7 @@ class InviteWatchlist(object):
 
 
         :param external: The external of this InviteWatchlist.  # noqa: E501
-        :type: list[ExternalWatchlistResult]
+        :type: list[object]
         """
 
         self._external = external

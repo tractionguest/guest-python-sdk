@@ -5,15 +5,15 @@ The root of the InviteDetail type's schema.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**registration** | [**Registration**](Registration.md) |  | [optional] 
+**registration** | **object** |  | [optional] 
 **mobile_number** | **str** | Phone number | [optional] 
 **email_template** | [**EmailTemplate**](EmailTemplate.md) |  | [optional] 
 **invite_watchlist** | [**InviteWatchlist**](InviteWatchlist.md) |  | [optional] 
 **notification_triggers** | [**list[NotificationTrigger]**](NotificationTrigger.md) | List of scheduled notifications for an invite | [optional] 
-**custom_fields** | [**list[CustomField]**](CustomField.md) |  | [optional] 
+**custom_fields** | **list[object]** |  | [optional] 
 **watchlist_colour** | **str** |  | [optional] 
-**location** | [**Location**](Location.md) |  | [optional] 
-**hosts** | [**list[Host]**](Host.md) |  | [optional] 
+**location** | **object** |  | [optional] 
+**hosts** | **list[object]** |  | [optional] 
 **start_date** | **datetime** |  | [optional] 
 **last_name** | **str** |  | 
 **first_name** | **str** |  | 
