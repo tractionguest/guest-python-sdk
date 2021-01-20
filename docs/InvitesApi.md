@@ -4,6 +4,7 @@ All URIs are relative to *https://us.tractionguest.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**batch_delete_invites**](InvitesApi.md#batch_delete_invites) | **POST** /invites/batch_delete | Delete Multiple Invites
 [**create_location_invite**](InvitesApi.md#create_location_invite) | **POST** /locations/{location_id}/invites | Create an Invite
 [**create_registration_invite**](InvitesApi.md#create_registration_invite) | **POST** /registrations/{registration_id}/invites | Create an Invite from a Registration
 [**delete_invite**](InvitesApi.md#delete_invite) | **DELETE** /invites/{invite_id} | Deletes an Invite
@@ -11,6 +12,67 @@ Method | HTTP request | Description
 [**get_invites**](InvitesApi.md#get_invites) | **GET** /invites | List all Invites
 [**update_invite**](InvitesApi.md#update_invite) | **PUT** /invites/{invite_id} | Update an Invite
 
+
+# **batch_delete_invites**
+> BatchJob batch_delete_invites(identifier_list=identifier_list)
+
+Delete Multiple Invites
+
+Queues up a \"delete\" background task for one or more `Invite` entities.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import TractionGuest
+from TractionGuest.rest import ApiException
+from pprint import pprint
+configuration = TractionGuest.Configuration()
+
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
+
+# Enter a context with an instance of the API client
+with TractionGuest.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = TractionGuest.InvitesApi(api_client)
+    identifier_list = TractionGuest.IdentifierList() # IdentifierList |  (optional)
+
+    try:
+        # Delete Multiple Invites
+        api_response = api_instance.batch_delete_invites(identifier_list=identifier_list)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling InvitesApi->batch_delete_invites: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier_list** | [**IdentifierList**](IdentifierList.md)|  | [optional] 
+
+### Return type
+
+[**BatchJob**](BatchJob.md)
+
+### Authorization
+
+[TractionGuestAuth](../README.md#TractionGuestAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Accepted |  -  |
+**4XX** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_location_invite**
 > InviteDetail create_location_invite(location_id, invite_create_params, idempotency_key=idempotency_key)

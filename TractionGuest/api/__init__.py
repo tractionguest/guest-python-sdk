@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 # import apis into api package
 from TractionGuest.api.audit_logs_api import AuditLogsApi
+from TractionGuest.api.batches_api import BatchesApi
 from TractionGuest.api.capacities_api import CapacitiesApi
 from TractionGuest.api.email_templates_api import EmailTemplatesApi
 from TractionGuest.api.hosts_api import HostsApi
