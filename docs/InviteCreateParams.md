@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **end_date** | **datetime** |  | [optional] 
 **email** | **str** |  | 
 **company** | **str** |  | [optional] 
-**group_visit_id** | **str** |  | [optional] 
+**group_visit_id** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_registrations**
-> PaginatedRegistrationsList get_registrations(limit=limit, offset=offset, location_ids=location_ids, created_before=created_before, created_after=created_after)
+> PaginatedRegistrationsList get_registrations(limit=limit, offset=offset, location_ids=location_ids, created_before=created_before, created_after=created_after, needs_confirmation=needs_confirmation)
 
 List all Registrations
 
@@ -102,10 +102,11 @@ offset = 56 # int | Offsets the results to a specified number, defaults to 0 (op
 location_ids = 'location_ids_example' # str | A comma separated list of Location IDs (optional)
 created_before = 'created_before_example' # str | Restricts results to only those that were created before the provided date (optional)
 created_after = 'created_after_example' # str | Restricts results to only those that were created after the provided date (optional)
+needs_confirmation = True # bool | A confirmed `Registration` is one with an associated `Invite`. This filter returns those without an `Invite` when true, and those with an `Invite` when false. (optional)
 
     try:
         # List all Registrations
-        api_response = api_instance.get_registrations(limit=limit, offset=offset, location_ids=location_ids, created_before=created_before, created_after=created_after)
+        api_response = api_instance.get_registrations(limit=limit, offset=offset, location_ids=location_ids, created_before=created_before, created_after=created_after, needs_confirmation=needs_confirmation)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling RegistrationsApi->get_registrations: %s\n" % e)
@@ -120,6 +121,7 @@ Name | Type | Description  | Notes
  **location_ids** | **str**| A comma separated list of Location IDs | [optional] 
  **created_before** | **str**| Restricts results to only those that were created before the provided date | [optional] 
  **created_after** | **str**| Restricts results to only those that were created after the provided date | [optional] 
+ **needs_confirmation** | **bool**| A confirmed &#x60;Registration&#x60; is one with an associated &#x60;Invite&#x60;. This filter returns those without an &#x60;Invite&#x60; when true, and those with an &#x60;Invite&#x60; when false. | [optional] 
 
 ### Return type
 
