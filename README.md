@@ -176,6 +176,7 @@ Class | Method | HTTP request | Description
  - [PackageUpdateParams](docs/PackageUpdateParams.md)
  - [PaginatedAuditLogsList](docs/PaginatedAuditLogsList.md)
  - [PaginatedEmailTemplatesList](docs/PaginatedEmailTemplatesList.md)
+ - [PaginatedGroupVisitsList](docs/PaginatedGroupVisitsList.md)
  - [PaginatedHostsList](docs/PaginatedHostsList.md)
  - [PaginatedInvitesList](docs/PaginatedInvitesList.md)
  - [PaginatedLocationsList](docs/PaginatedLocationsList.md)

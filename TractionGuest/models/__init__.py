@@ -50,6 +50,7 @@ from TractionGuest.models.package_create_params import PackageCreateParams
 from TractionGuest.models.package_update_params import PackageUpdateParams
 from TractionGuest.models.paginated_audit_logs_list import PaginatedAuditLogsList
 from TractionGuest.models.paginated_email_templates_list import PaginatedEmailTemplatesList
+from TractionGuest.models.paginated_group_visits_list import PaginatedGroupVisitsList
 from TractionGuest.models.paginated_hosts_list import PaginatedHostsList
 from TractionGuest.models.paginated_invites_list import PaginatedInvitesList
 from TractionGuest.models.paginated_locations_list import PaginatedLocationsList

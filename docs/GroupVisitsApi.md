@@ -134,7 +134,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The &#x60;GroupVisit&#x60; has been deleted |  -  |
+**204** | The &#x60;GroupVisit&#x60; has been deleted |  -  |
 **400** | There was an error in trying to delete the &#x60;GroupVisit&#x60; |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_group_visits**
-> ErrorsList get_group_visits(limit=limit, offset=offset, location_ids=location_ids, sort_with=sort_with)
+> PaginatedGroupVisitsList get_group_visits(limit=limit, offset=offset, location_ids=location_ids, sort_with=sort_with)
 
 List all Group Visits (Appointments)
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ErrorsList**](ErrorsList.md)
+[**PaginatedGroupVisitsList**](PaginatedGroupVisitsList.md)
 
 ### Authorization
 
