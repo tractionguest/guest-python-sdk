@@ -1,11 +1,12 @@
 # Watchlist
 
 The root of the Watchlist type's schema.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**aliases** | **list[str]** |  | [optional] 
+**aliases** | **[str]** |  | [optional] 
 **photo** | **str** |  | [optional] 
 **notes** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 

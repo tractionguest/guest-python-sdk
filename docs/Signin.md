@@ -1,12 +1,13 @@
 # Signin
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
+**hosts** | [**[Host]**](Host.md) |  | 
 **mobile_number** | **str** |  | [optional] 
 **signin_watchlist** | [**SigninWatchlist**](SigninWatchlist.md) |  | [optional] 
-**hosts** | [**list[Host]**](Host.md) |  | 
 **signin_timestamp** | **datetime** |  | [optional] 
 **signin_photo_url** | **str** |  | [optional] 
 **signed_out_timestamp** | **datetime** |  | [optional] 

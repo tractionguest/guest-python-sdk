@@ -1,10 +1,11 @@
 # WatchlistCreateParams
 
 Parameters required for updating or creating watchlist records
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aliases** | **list[str]** |  | [optional] 
+**aliases** | **[str]** |  | [optional] 
 **notes** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **first_name** | **str** |  | [optional] 

@@ -1,6 +1,7 @@
 # EmailTemplate
 
 The root of the EmailTemplate type's schema.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

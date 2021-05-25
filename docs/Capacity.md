@@ -1,6 +1,7 @@
 # Capacity
 
 The root of the Capacity's schema.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

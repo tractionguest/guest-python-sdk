@@ -1,6 +1,7 @@
 # BatchJob
 
 The root of the BatchJob's schema.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

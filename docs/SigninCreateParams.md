@@ -1,6 +1,7 @@
 # SigninCreateParams
 
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -12,7 +13,7 @@ Name | Type | Description | Notes
 **sms_message** | **str** |  | [optional] 
 **send_notifications** | **bool** |  | [optional] 
 **location_id** | **int** | ID of the Location where the Signin happened, ignored if &#x60;registration_id&#x60; is included | [optional] 
-**host_ids** | **list[int]** | Array of Host ids, ignored if &#x60;registration_id&#x60; is included | [optional] 
+**host_ids** | **[int]** | Array of Host ids, ignored if &#x60;registration_id&#x60; is included | [optional] 
 **host_email_template_id** | **int** |  | [optional] 
 **guest_email_template_id** | **int** |  | [optional] 
 

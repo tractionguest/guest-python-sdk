@@ -1,6 +1,7 @@
 # PackageCreateParams
 
 A [base64_image] string is provided as an encoded image of a shipping label. The image will be processed to determine the package's intended recipient. If a match is found between the recipient and an existing host, they'll be notified about the arrival of their package at the [location_id] specified.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

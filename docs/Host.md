@@ -1,6 +1,7 @@
 # Host
 
 A client host assigned to a Signin
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

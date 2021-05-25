@@ -1,12 +1,13 @@
 # InternalWatchlistResult
 
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**colour** | **str** |  | 
 **id** | **int** |  | [optional] 
 **email** | **str** |  | [optional] 
-**colour** | **str** |  | 
 **last_name** | **str** |  | [optional] 
 **first_name** | **str** |  | [optional] 
 

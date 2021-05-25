@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     Traction Guest API
 
@@ -11,18 +9,22 @@
 """
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
+import sys  # noqa: F401
 
-# python 2 and python 3 compatibility library
-import six
-
-from TractionGuest.api_client import ApiClient
-from TractionGuest.exceptions import (  # noqa: F401
-    ApiTypeError,
-    ApiValueError
+from TractionGuest.api_client import ApiClient, Endpoint as _Endpoint
+from TractionGuest.model_utils import (  # noqa: F401
+    check_allowed_values,
+    check_validations,
+    date,
+    datetime,
+    file_type,
+    none_type,
+    validate_and_convert_types
 )
+from TractionGuest.model.errors_list import ErrorsList
+from TractionGuest.model.paginated_registrations_list import PaginatedRegistrationsList
+from TractionGuest.model.registration_detail import RegistrationDetail
 
 
 class RegistrationsApi(object):
@@ -37,256 +39,266 @@ class RegistrationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_registration(self, registration_id, **kwargs):  # noqa: E501
-        """Get a Registration  # noqa: E501
+        def __get_registration(
+            self,
+            registration_id,
+            **kwargs
+        ):
+            """Get a Registration  # noqa: E501
 
-        Gets the details of a single instance of a `Registration`  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_registration(registration_id, async_req=True)
-        >>> result = thread.get()
+            Gets the details of a single instance of a `Registration`  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
 
-        :param async_req bool: execute request asynchronously
-        :param str registration_id: (required)
-        :param str include: A list of comma-separated related models to include
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: RegistrationDetail
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.get_registration_with_http_info(registration_id, **kwargs)  # noqa: E501
+            >>> thread = api.get_registration(registration_id, async_req=True)
+            >>> result = thread.get()
 
-    def get_registration_with_http_info(self, registration_id, **kwargs):  # noqa: E501
-        """Get a Registration  # noqa: E501
+            Args:
+                registration_id (str):
 
-        Gets the details of a single instance of a `Registration`  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_registration_with_http_info(registration_id, async_req=True)
-        >>> result = thread.get()
+            Keyword Args:
+                include (str): A list of comma-separated related models to include. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
 
-        :param async_req bool: execute request asynchronously
-        :param str registration_id: (required)
-        :param str include: A list of comma-separated related models to include
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: tuple(RegistrationDetail, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
+            Returns:
+                RegistrationDetail
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['registration_id'] = \
+                registration_id
+            return self.call_with_http_info(**kwargs)
 
-        local_var_params = locals()
-
-        all_params = [
-            'registration_id',
-            'include'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
+        self.get_registration = _Endpoint(
+            settings={
+                'response_type': (RegistrationDetail,),
+                'auth': [],
+                'endpoint_path': '/registrations/{registration_id}',
+                'operation_id': 'get_registration',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'registration_id',
+                    'include',
+                ],
+                'required': [
+                    'registration_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'registration_id':
+                        (str,),
+                    'include':
+                        (str,),
+                },
+                'attribute_map': {
+                    'registration_id': 'registration_id',
+                    'include': 'include',
+                },
+                'location_map': {
+                    'registration_id': 'path',
+                    'include': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_registration
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_registration" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-        # verify the required parameter 'registration_id' is set
-        if self.api_client.client_side_validation and ('registration_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['registration_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `registration_id` when calling `get_registration`")  # noqa: E501
+        def __get_registrations(
+            self,
+            **kwargs
+        ):
+            """List all Registrations  # noqa: E501
 
-        collection_formats = {}
+            Gets a list of all `Registration` entities.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
 
-        path_params = {}
-        if 'registration_id' in local_var_params:
-            path_params['registration_id'] = local_var_params['registration_id']  # noqa: E501
+            >>> thread = api.get_registrations(async_req=True)
+            >>> result = thread.get()
 
-        query_params = []
-        if 'include' in local_var_params and local_var_params['include'] is not None:  # noqa: E501
-            query_params.append(('include', local_var_params['include']))  # noqa: E501
 
-        header_params = {}
+            Keyword Args:
+                limit (int): Limits the results to a specified number, defaults to 50. [optional]
+                offset (int): Offsets the results to a specified number, defaults to 0. [optional]
+                location_ids (str): A comma separated list of Location IDs. [optional]
+                created_before (str): Restricts results to only those that were created before the provided date. [optional]
+                created_after (str): Restricts results to only those that were created after the provided date. [optional]
+                needs_confirmation (bool): A confirmed `Registration` is one with an associated `Invite`. This filter returns those without an `Invite` when true, and those with an `Invite` when false.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
 
-        form_params = []
-        local_var_files = {}
+            Returns:
+                PaginatedRegistrationsList
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
 
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['TractionGuestAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/registrations/{registration_id}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='RegistrationDetail',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_registrations(self, **kwargs):  # noqa: E501
-        """List all Registrations  # noqa: E501
-
-        Gets a list of all `Registration` entities.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_registrations(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param int limit: Limits the results to a specified number, defaults to 50
-        :param int offset: Offsets the results to a specified number, defaults to 0
-        :param str location_ids: A comma separated list of Location IDs
-        :param str created_before: Restricts results to only those that were created before the provided date
-        :param str created_after: Restricts results to only those that were created after the provided date
-        :param bool needs_confirmation: A confirmed `Registration` is one with an associated `Invite`. This filter returns those without an `Invite` when true, and those with an `Invite` when false.
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: PaginatedRegistrationsList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.get_registrations_with_http_info(**kwargs)  # noqa: E501
-
-    def get_registrations_with_http_info(self, **kwargs):  # noqa: E501
-        """List all Registrations  # noqa: E501
-
-        Gets a list of all `Registration` entities.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_registrations_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param int limit: Limits the results to a specified number, defaults to 50
-        :param int offset: Offsets the results to a specified number, defaults to 0
-        :param str location_ids: A comma separated list of Location IDs
-        :param str created_before: Restricts results to only those that were created before the provided date
-        :param str created_after: Restricts results to only those that were created after the provided date
-        :param bool needs_confirmation: A confirmed `Registration` is one with an associated `Invite`. This filter returns those without an `Invite` when true, and those with an `Invite` when false.
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: tuple(PaginatedRegistrationsList, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = [
-            'limit',
-            'offset',
-            'location_ids',
-            'created_before',
-            'created_after',
-            'needs_confirmation'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
+        self.get_registrations = _Endpoint(
+            settings={
+                'response_type': (PaginatedRegistrationsList,),
+                'auth': [],
+                'endpoint_path': '/registrations',
+                'operation_id': 'get_registrations',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'limit',
+                    'offset',
+                    'location_ids',
+                    'created_before',
+                    'created_after',
+                    'needs_confirmation',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                    'location_ids':
+                        (str,),
+                    'created_before':
+                        (str,),
+                    'created_after':
+                        (str,),
+                    'needs_confirmation':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'limit': 'limit',
+                    'offset': 'offset',
+                    'location_ids': 'location_ids',
+                    'created_before': 'created_before',
+                    'created_after': 'created_after',
+                    'needs_confirmation': 'needs_confirmation',
+                },
+                'location_map': {
+                    'limit': 'query',
+                    'offset': 'query',
+                    'location_ids': 'query',
+                    'created_before': 'query',
+                    'created_after': 'query',
+                    'needs_confirmation': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_registrations
         )
-
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_registrations" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
-            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
-        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
-            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
-        if 'location_ids' in local_var_params and local_var_params['location_ids'] is not None:  # noqa: E501
-            query_params.append(('location_ids', local_var_params['location_ids']))  # noqa: E501
-        if 'created_before' in local_var_params and local_var_params['created_before'] is not None:  # noqa: E501
-            query_params.append(('created_before', local_var_params['created_before']))  # noqa: E501
-        if 'created_after' in local_var_params and local_var_params['created_after'] is not None:  # noqa: E501
-            query_params.append(('created_after', local_var_params['created_after']))  # noqa: E501
-        if 'needs_confirmation' in local_var_params and local_var_params['needs_confirmation'] is not None:  # noqa: E501
-            query_params.append(('needs_confirmation', local_var_params['needs_confirmation']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['TractionGuestAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/registrations', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='PaginatedRegistrationsList',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)

@@ -1,6 +1,7 @@
 # AuditLog
 
 The root of the AuditLog type's schema.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,7 +11,7 @@ Name | Type | Description | Notes
 **remote_address** | **str** |  | [optional] 
 **comment** | **str** |  | [optional] 
 **version** | **int** |  | [optional] 
-**audited_changes** | [**list[AuditLogChange]**](AuditLogChange.md) |  | [optional] 
+**audited_changes** | [**[AuditLogChange]**](AuditLogChange.md) |  | [optional] 
 **action** | **str** |  | [optional] 
 **username** | **str** |  | [optional] 
 **user_id** | **int** |  | [optional] 

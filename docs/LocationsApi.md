@@ -18,35 +18,44 @@ Gets details of a single instance of `Location`.
 ### Example
 
 ```python
-from __future__ import print_function
 import time
 import TractionGuest
-from TractionGuest.rest import ApiException
+from TractionGuest.api import locations_api
+from TractionGuest.model.errors_list import ErrorsList
+from TractionGuest.model.location import Location
 from pprint import pprint
-configuration = TractionGuest.Configuration()
+# Defining the host is optional and defaults to https://us.tractionguest.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = TractionGuest.Configuration(
+    host = "https://us.tractionguest.com/api/v3"
+)
 
-# Defining host is optional and default to https://us.tractionguest.com/api/v3
-configuration.host = "https://us.tractionguest.com/api/v3"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = TractionGuest.LocationsApi(api_client)
-    location_id = 'location_id_example' # str | 
+    api_instance = locations_api.LocationsApi(api_client)
+    location_id = "location_id_example" # str | 
 
+    # example passing only required values which don't have defaults set
     try:
         # Get the details of a location
         api_response = api_instance.get_location(location_id)
         pprint(api_response)
-    except ApiException as e:
+    except TractionGuest.ApiException as e:
         print("Exception when calling LocationsApi->get_location: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location_id** | **str**|  | 
+ **location_id** | **str**|  |
 
 ### Return type
 
@@ -54,12 +63,13 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[TractionGuestAuth](../README.md#TractionGuestAuth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -73,7 +83,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_locations**
-> PaginatedLocationsList get_locations(limit=limit, offset=offset, query=query, include=include)
+> PaginatedLocationsList get_locations()
 
 List all Locations
 
@@ -82,41 +92,51 @@ Gets a list of all `Location` entities.
 ### Example
 
 ```python
-from __future__ import print_function
 import time
 import TractionGuest
-from TractionGuest.rest import ApiException
+from TractionGuest.api import locations_api
+from TractionGuest.model.errors_list import ErrorsList
+from TractionGuest.model.paginated_locations_list import PaginatedLocationsList
 from pprint import pprint
-configuration = TractionGuest.Configuration()
+# Defining the host is optional and defaults to https://us.tractionguest.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = TractionGuest.Configuration(
+    host = "https://us.tractionguest.com/api/v3"
+)
 
-# Defining host is optional and default to https://us.tractionguest.com/api/v3
-configuration.host = "https://us.tractionguest.com/api/v3"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = TractionGuest.LocationsApi(api_client)
-    limit = 56 # int | Limits the results to a specified number, defaults to 50 (optional)
-offset = 56 # int | Offsets the results to a specified number, defaults to 0 (optional)
-query = 'query_example' # str | Queries by Location `name` (optional)
-include = 'include_example' # str | A list of comma-separated related models to include (optional)
+    api_instance = locations_api.LocationsApi(api_client)
+    limit = 1 # int | Limits the results to a specified number, defaults to 50 (optional)
+    offset = 1 # int | Offsets the results to a specified number, defaults to 0 (optional)
+    query = "query_example" # str | Queries by Location `name` (optional)
+    include = "include_example" # str | A list of comma-separated related models to include (optional)
 
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # List all Locations
         api_response = api_instance.get_locations(limit=limit, offset=offset, query=query, include=include)
         pprint(api_response)
-    except ApiException as e:
+    except TractionGuest.ApiException as e:
         print("Exception when calling LocationsApi->get_locations: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Limits the results to a specified number, defaults to 50 | [optional] 
- **offset** | **int**| Offsets the results to a specified number, defaults to 0 | [optional] 
- **query** | **str**| Queries by Location &#x60;name&#x60; | [optional] 
- **include** | **str**| A list of comma-separated related models to include | [optional] 
+ **limit** | **int**| Limits the results to a specified number, defaults to 50 | [optional]
+ **offset** | **int**| Offsets the results to a specified number, defaults to 0 | [optional]
+ **query** | **str**| Queries by Location &#x60;name&#x60; | [optional]
+ **include** | **str**| A list of comma-separated related models to include | [optional]
 
 ### Return type
 
@@ -124,12 +144,13 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[TractionGuestAuth](../README.md#TractionGuestAuth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

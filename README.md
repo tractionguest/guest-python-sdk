@@ -26,7 +26,7 @@ For more information, please visit [https://tractionguest.com](https://tractiong
 
 ## Requirements.
 
-Python 2.7 and 3.4+
+Python >= 3.6
 
 ## Installation & Usage
 ### pip install
@@ -62,32 +62,38 @@ import TractionGuest
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```python
-from __future__ import print_function
+
 import time
 import TractionGuest
-from TractionGuest.rest import ApiException
 from pprint import pprint
+from TractionGuest.api import audit_logs_api
+from TractionGuest.model.audit_log import AuditLog
+from TractionGuest.model.errors_list import ErrorsList
+from TractionGuest.model.paginated_audit_logs_list import PaginatedAuditLogsList
+# Defining the host is optional and defaults to https://us.tractionguest.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = TractionGuest.Configuration(
+    host = "https://us.tractionguest.com/api/v3"
+)
 
-configuration = TractionGuest.Configuration()
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Defining host is optional and default to https://us.tractionguest.com/api/v3
-configuration.host = "https://us.tractionguest.com/api/v3"
 
-# Defining host is optional and default to https://us.tractionguest.com/api/v3
-configuration.host = "https://us.tractionguest.com/api/v3"
 # Enter a context with an instance of the API client
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = TractionGuest.AuditLogsApi(api_client)
-    audit_log_id = 'audit_log_id_example' # str | 
+    api_instance = audit_logs_api.AuditLogsApi(api_client)
+    audit_log_id = "audit_log_id_example" # str | 
 
     try:
         # Get an AuditLog
         api_response = api_instance.get_audit_log(audit_log_id)
         pprint(api_response)
-    except ApiException as e:
+    except TractionGuest.ApiException as e:
         print("Exception when calling AuditLogsApi->get_audit_log: %s\n" % e)
-    
 ```
 
 ## Documentation for API Endpoints
@@ -207,13 +213,29 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-
-## TractionGuestAuth
-
-
+ All endpoints do not require authorization.
 
 ## Author
 
 support@tractionguest.com
 
+
+## Notes for Large OpenAPI documents
+If the OpenAPI document is large, imports in TractionGuest.apis and TractionGuest.models may fail with a
+RecursionError indicating the maximum recursion limit has been exceeded. In that case, there are a couple of solutions:
+
+Solution 1:
+Use specific imports for apis and models like:
+- `from TractionGuest.api.default_api import DefaultApi`
+- `from TractionGuest.model.pet import Pet`
+
+Solution 2:
+Before importing the package, adjust the maximum recursion limit as shown below:
+```
+import sys
+sys.setrecursionlimit(1500)
+import TractionGuest
+from TractionGuest.apis import *
+from TractionGuest.models import *
+```
 

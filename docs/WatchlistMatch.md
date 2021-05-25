@@ -1,16 +1,17 @@
 # WatchlistMatch
 
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**alt_names** | **list[str]** |  | [optional] 
-**federal_register_notice** | **str** |  | [optional] 
 **name** | **str** |  | 
+**list** | **str** |  | 
+**id** | **str** |  | [optional] 
+**alt_names** | **[str]** |  | [optional] 
+**federal_register_notice** | **str** |  | [optional] 
 **source_information_url** | **str** |  | [optional] 
 **source_list_url** | **str** |  | [optional] 
-**list** | **str** |  | 
 **type** | **str** |  | [optional] 
 **category** | **str** |  | [optional] 
 **street1** | **str** |  | [optional] 

@@ -1,6 +1,7 @@
 # Visitor
 
 Visitor information
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

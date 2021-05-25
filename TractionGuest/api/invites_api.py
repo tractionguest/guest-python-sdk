@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     Traction Guest API
 
@@ -11,18 +9,26 @@
 """
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
+import sys  # noqa: F401
 
-# python 2 and python 3 compatibility library
-import six
-
-from TractionGuest.api_client import ApiClient
-from TractionGuest.exceptions import (  # noqa: F401
-    ApiTypeError,
-    ApiValueError
+from TractionGuest.api_client import ApiClient, Endpoint as _Endpoint
+from TractionGuest.model_utils import (  # noqa: F401
+    check_allowed_values,
+    check_validations,
+    date,
+    datetime,
+    file_type,
+    none_type,
+    validate_and_convert_types
 )
+from TractionGuest.model.batch_job import BatchJob
+from TractionGuest.model.errors_list import ErrorsList
+from TractionGuest.model.identifier_list import IdentifierList
+from TractionGuest.model.invite_create_params import InviteCreateParams
+from TractionGuest.model.invite_detail import InviteDetail
+from TractionGuest.model.invite_update_params import InviteUpdateParams
+from TractionGuest.model.paginated_invites_list import PaginatedInvitesList
 
 
 class InvitesApi(object):
@@ -37,902 +43,940 @@ class InvitesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def batch_delete_invites(self, **kwargs):  # noqa: E501
-        """Delete Multiple Invites  # noqa: E501
+        def __batch_delete_invites(
+            self,
+            **kwargs
+        ):
+            """Delete Multiple Invites  # noqa: E501
 
-        Queues up a \"delete\" background task for one or more `Invite` entities.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.batch_delete_invites(async_req=True)
-        >>> result = thread.get()
+            Queues up a \"delete\" background task for one or more `Invite` entities.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
 
-        :param async_req bool: execute request asynchronously
-        :param IdentifierList identifier_list:
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: BatchJob
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.batch_delete_invites_with_http_info(**kwargs)  # noqa: E501
+            >>> thread = api.batch_delete_invites(async_req=True)
+            >>> result = thread.get()
 
-    def batch_delete_invites_with_http_info(self, **kwargs):  # noqa: E501
-        """Delete Multiple Invites  # noqa: E501
 
-        Queues up a \"delete\" background task for one or more `Invite` entities.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.batch_delete_invites_with_http_info(async_req=True)
-        >>> result = thread.get()
+            Keyword Args:
+                identifier_list (IdentifierList): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
 
-        :param async_req bool: execute request asynchronously
-        :param IdentifierList identifier_list:
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: tuple(BatchJob, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
+            Returns:
+                BatchJob
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
 
-        local_var_params = locals()
-
-        all_params = [
-            'identifier_list'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
+        self.batch_delete_invites = _Endpoint(
+            settings={
+                'response_type': (BatchJob,),
+                'auth': [],
+                'endpoint_path': '/invites/batch_delete',
+                'operation_id': 'batch_delete_invites',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'identifier_list',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'identifier_list':
+                        (IdentifierList,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'identifier_list': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__batch_delete_invites
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method batch_delete_invites" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
+        def __create_location_invite(
+            self,
+            location_id,
+            invite_create_params,
+            **kwargs
+        ):
+            """Create an Invite  # noqa: E501
 
-        collection_formats = {}
+            Creates a new `Invite` for a specific `Location`.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
 
-        path_params = {}
+            >>> thread = api.create_location_invite(location_id, invite_create_params, async_req=True)
+            >>> result = thread.get()
 
-        query_params = []
+            Args:
+                location_id (str):
+                invite_create_params (InviteCreateParams):
 
-        header_params = {}
+            Keyword Args:
+                idempotency_key (str): An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
 
-        form_params = []
-        local_var_files = {}
+            Returns:
+                InviteDetail
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['location_id'] = \
+                location_id
+            kwargs['invite_create_params'] = \
+                invite_create_params
+            return self.call_with_http_info(**kwargs)
 
-        body_params = None
-        if 'identifier_list' in local_var_params:
-            body_params = local_var_params['identifier_list']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['TractionGuestAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/invites/batch_delete', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='BatchJob',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def create_location_invite(self, location_id, invite_create_params, **kwargs):  # noqa: E501
-        """Create an Invite  # noqa: E501
-
-        Creates a new `Invite` for a specific `Location`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_location_invite(location_id, invite_create_params, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str location_id: (required)
-        :param InviteCreateParams invite_create_params: (required)
-        :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: InviteDetail
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.create_location_invite_with_http_info(location_id, invite_create_params, **kwargs)  # noqa: E501
-
-    def create_location_invite_with_http_info(self, location_id, invite_create_params, **kwargs):  # noqa: E501
-        """Create an Invite  # noqa: E501
-
-        Creates a new `Invite` for a specific `Location`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_location_invite_with_http_info(location_id, invite_create_params, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str location_id: (required)
-        :param InviteCreateParams invite_create_params: (required)
-        :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: tuple(InviteDetail, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = [
-            'location_id',
-            'invite_create_params',
-            'idempotency_key'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
+        self.create_location_invite = _Endpoint(
+            settings={
+                'response_type': (InviteDetail,),
+                'auth': [],
+                'endpoint_path': '/locations/{location_id}/invites',
+                'operation_id': 'create_location_invite',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'location_id',
+                    'invite_create_params',
+                    'idempotency_key',
+                ],
+                'required': [
+                    'location_id',
+                    'invite_create_params',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'location_id':
+                        (str,),
+                    'invite_create_params':
+                        (InviteCreateParams,),
+                    'idempotency_key':
+                        (str,),
+                },
+                'attribute_map': {
+                    'location_id': 'location_id',
+                    'idempotency_key': 'Idempotency-Key',
+                },
+                'location_map': {
+                    'location_id': 'path',
+                    'invite_create_params': 'body',
+                    'idempotency_key': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__create_location_invite
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_location_invite" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-        # verify the required parameter 'location_id' is set
-        if self.api_client.client_side_validation and ('location_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['location_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `location_id` when calling `create_location_invite`")  # noqa: E501
-        # verify the required parameter 'invite_create_params' is set
-        if self.api_client.client_side_validation and ('invite_create_params' not in local_var_params or  # noqa: E501
-                                                        local_var_params['invite_create_params'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `invite_create_params` when calling `create_location_invite`")  # noqa: E501
+        def __create_registration_invite(
+            self,
+            registration_id,
+            **kwargs
+        ):
+            """Create an Invite from a Registration  # noqa: E501
 
-        collection_formats = {}
+            Creates a new `Invite` from `Registration` data.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
 
-        path_params = {}
-        if 'location_id' in local_var_params:
-            path_params['location_id'] = local_var_params['location_id']  # noqa: E501
+            >>> thread = api.create_registration_invite(registration_id, async_req=True)
+            >>> result = thread.get()
 
-        query_params = []
+            Args:
+                registration_id (str):
 
-        header_params = {}
-        if 'idempotency_key' in local_var_params:
-            header_params['Idempotency-Key'] = local_var_params['idempotency_key']  # noqa: E501
+            Keyword Args:
+                idempotency_key (str): An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
 
-        form_params = []
-        local_var_files = {}
+            Returns:
+                InviteDetail
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['registration_id'] = \
+                registration_id
+            return self.call_with_http_info(**kwargs)
 
-        body_params = None
-        if 'invite_create_params' in local_var_params:
-            body_params = local_var_params['invite_create_params']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['TractionGuestAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/locations/{location_id}/invites', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='InviteDetail',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def create_registration_invite(self, registration_id, **kwargs):  # noqa: E501
-        """Create an Invite from a Registration  # noqa: E501
-
-        Creates a new `Invite` from `Registration` data.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_registration_invite(registration_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str registration_id: (required)
-        :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: InviteDetail
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.create_registration_invite_with_http_info(registration_id, **kwargs)  # noqa: E501
-
-    def create_registration_invite_with_http_info(self, registration_id, **kwargs):  # noqa: E501
-        """Create an Invite from a Registration  # noqa: E501
-
-        Creates a new `Invite` from `Registration` data.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_registration_invite_with_http_info(registration_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str registration_id: (required)
-        :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: tuple(InviteDetail, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = [
-            'registration_id',
-            'idempotency_key'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
+        self.create_registration_invite = _Endpoint(
+            settings={
+                'response_type': (InviteDetail,),
+                'auth': [],
+                'endpoint_path': '/registrations/{registration_id}/invites',
+                'operation_id': 'create_registration_invite',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'registration_id',
+                    'idempotency_key',
+                ],
+                'required': [
+                    'registration_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'registration_id':
+                        (str,),
+                    'idempotency_key':
+                        (str,),
+                },
+                'attribute_map': {
+                    'registration_id': 'registration_id',
+                    'idempotency_key': 'Idempotency-Key',
+                },
+                'location_map': {
+                    'registration_id': 'path',
+                    'idempotency_key': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__create_registration_invite
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_registration_invite" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-        # verify the required parameter 'registration_id' is set
-        if self.api_client.client_side_validation and ('registration_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['registration_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `registration_id` when calling `create_registration_invite`")  # noqa: E501
+        def __delete_invite(
+            self,
+            invite_id,
+            **kwargs
+        ):
+            """Deletes an Invite  # noqa: E501
 
-        collection_formats = {}
+            Deletes a single instance of `Invite`  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
 
-        path_params = {}
-        if 'registration_id' in local_var_params:
-            path_params['registration_id'] = local_var_params['registration_id']  # noqa: E501
+            >>> thread = api.delete_invite(invite_id, async_req=True)
+            >>> result = thread.get()
 
-        query_params = []
+            Args:
+                invite_id (str):
 
-        header_params = {}
-        if 'idempotency_key' in local_var_params:
-            header_params['Idempotency-Key'] = local_var_params['idempotency_key']  # noqa: E501
+            Keyword Args:
+                idempotency_key (str): An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
 
-        form_params = []
-        local_var_files = {}
+            Returns:
+                None
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['invite_id'] = \
+                invite_id
+            return self.call_with_http_info(**kwargs)
 
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['TractionGuestAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/registrations/{registration_id}/invites', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='InviteDetail',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def delete_invite(self, invite_id, **kwargs):  # noqa: E501
-        """Deletes an Invite  # noqa: E501
-
-        Deletes a single instance of `Invite`  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_invite(invite_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str invite_id: (required)
-        :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.delete_invite_with_http_info(invite_id, **kwargs)  # noqa: E501
-
-    def delete_invite_with_http_info(self, invite_id, **kwargs):  # noqa: E501
-        """Deletes an Invite  # noqa: E501
-
-        Deletes a single instance of `Invite`  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_invite_with_http_info(invite_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str invite_id: (required)
-        :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = [
-            'invite_id',
-            'idempotency_key'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
+        self.delete_invite = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [],
+                'endpoint_path': '/invites/{invite_id}',
+                'operation_id': 'delete_invite',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'invite_id',
+                    'idempotency_key',
+                ],
+                'required': [
+                    'invite_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'invite_id':
+                        (str,),
+                    'idempotency_key':
+                        (str,),
+                },
+                'attribute_map': {
+                    'invite_id': 'invite_id',
+                    'idempotency_key': 'Idempotency-Key',
+                },
+                'location_map': {
+                    'invite_id': 'path',
+                    'idempotency_key': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__delete_invite
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_invite" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-        # verify the required parameter 'invite_id' is set
-        if self.api_client.client_side_validation and ('invite_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['invite_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `invite_id` when calling `delete_invite`")  # noqa: E501
+        def __get_invite(
+            self,
+            invite_id,
+            **kwargs
+        ):
+            """Get an Invite  # noqa: E501
 
-        collection_formats = {}
+            Gets the details of a single instance of a `Invite`.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
 
-        path_params = {}
-        if 'invite_id' in local_var_params:
-            path_params['invite_id'] = local_var_params['invite_id']  # noqa: E501
+            >>> thread = api.get_invite(invite_id, async_req=True)
+            >>> result = thread.get()
 
-        query_params = []
+            Args:
+                invite_id (str):
 
-        header_params = {}
-        if 'idempotency_key' in local_var_params:
-            header_params['Idempotency-Key'] = local_var_params['idempotency_key']  # noqa: E501
+            Keyword Args:
+                include (str): A list of comma-separated related models to include. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
 
-        form_params = []
-        local_var_files = {}
+            Returns:
+                InviteDetail
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['invite_id'] = \
+                invite_id
+            return self.call_with_http_info(**kwargs)
 
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['TractionGuestAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/invites/{invite_id}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_invite(self, invite_id, **kwargs):  # noqa: E501
-        """Get an Invite  # noqa: E501
-
-        Gets the details of a single instance of a `Invite`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_invite(invite_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str invite_id: (required)
-        :param str include: A list of comma-separated related models to include
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: InviteDetail
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.get_invite_with_http_info(invite_id, **kwargs)  # noqa: E501
-
-    def get_invite_with_http_info(self, invite_id, **kwargs):  # noqa: E501
-        """Get an Invite  # noqa: E501
-
-        Gets the details of a single instance of a `Invite`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_invite_with_http_info(invite_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str invite_id: (required)
-        :param str include: A list of comma-separated related models to include
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: tuple(InviteDetail, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = [
-            'invite_id',
-            'include'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
+        self.get_invite = _Endpoint(
+            settings={
+                'response_type': (InviteDetail,),
+                'auth': [],
+                'endpoint_path': '/invites/{invite_id}',
+                'operation_id': 'get_invite',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'invite_id',
+                    'include',
+                ],
+                'required': [
+                    'invite_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'invite_id':
+                        (str,),
+                    'include':
+                        (str,),
+                },
+                'attribute_map': {
+                    'invite_id': 'invite_id',
+                    'include': 'include',
+                },
+                'location_map': {
+                    'invite_id': 'path',
+                    'include': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_invite
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_invite" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-        # verify the required parameter 'invite_id' is set
-        if self.api_client.client_side_validation and ('invite_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['invite_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `invite_id` when calling `get_invite`")  # noqa: E501
+        def __get_invites(
+            self,
+            **kwargs
+        ):
+            """List all Invites  # noqa: E501
 
-        collection_formats = {}
+            Gets a list of all `Invite` entities.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
 
-        path_params = {}
-        if 'invite_id' in local_var_params:
-            path_params['invite_id'] = local_var_params['invite_id']  # noqa: E501
+            >>> thread = api.get_invites(async_req=True)
+            >>> result = thread.get()
 
-        query_params = []
-        if 'include' in local_var_params and local_var_params['include'] is not None:  # noqa: E501
-            query_params.append(('include', local_var_params['include']))  # noqa: E501
 
-        header_params = {}
+            Keyword Args:
+                limit (int): Limits the results to a specified number, defaults to 50. [optional]
+                offset (int): Offsets the results to a specified number, defaults to 0. [optional]
+                query (str): Filters by `first_name`, `last_name`, `company`, and `email`. [optional]
+                with_colours (str): A comma separated list of case-insensitive colour values. i.e., `red`, `green`, `yellow`, and `orange`. [optional]
+                location_ids (str): A comma separated list of Location IDs. [optional]
+                sort_by (str): Sorts by the field name and direction provided where the pattern is `FIELD_NAME_DIRECTION`. [optional]
+                starts_before (date): Filters results to all those *before* the provided datetime. [optional]
+                starts_after (date): Filters results to all those *after* the provided datetime. [optional]
+                include (str): A list of comma-separated related models to include. [optional]
+                is_approved (bool): True to return approved and auto approved invites, False to return pending and rejected invites. [optional]
+                active_after (datetime): Checks that an invite hasn't yet started, or has started and is still active after a specified time. [optional]
+                active_before (datetime): Checks that an invite hasn't ended before a specified time. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
 
-        form_params = []
-        local_var_files = {}
+            Returns:
+                PaginatedInvitesList
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
 
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        self.get_invites = _Endpoint(
+            settings={
+                'response_type': (PaginatedInvitesList,),
+                'auth': [],
+                'endpoint_path': '/invites',
+                'operation_id': 'get_invites',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'limit',
+                    'offset',
+                    'query',
+                    'with_colours',
+                    'location_ids',
+                    'sort_by',
+                    'starts_before',
+                    'starts_after',
+                    'include',
+                    'is_approved',
+                    'active_after',
+                    'active_before',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                    'sort_by',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('sort_by',): {
 
-        # Authentication setting
-        auth_settings = ['TractionGuestAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/invites/{invite_id}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='InviteDetail',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_invites(self, **kwargs):  # noqa: E501
-        """List all Invites  # noqa: E501
-
-        Gets a list of all `Invite` entities.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_invites(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param int limit: Limits the results to a specified number, defaults to 50
-        :param int offset: Offsets the results to a specified number, defaults to 0
-        :param str query: Filters by `first_name`, `last_name`, `company`, and `email`
-        :param str with_colours: A comma separated list of case-insensitive colour values. i.e., `red`, `green`, `yellow`, and `orange`
-        :param str location_ids: A comma separated list of Location IDs
-        :param str sort_by: Sorts by the field name and direction provided where the pattern is `FIELD_NAME_DIRECTION`
-        :param date starts_before: Filters results to all those *before* the provided datetime
-        :param date starts_after: Filters results to all those *after* the provided datetime
-        :param str include: A list of comma-separated related models to include
-        :param bool is_approved: True to return approved and auto approved invites, False to return pending and rejected invites
-        :param datetime active_after: Checks that an invite hasn't yet started, or has started and is still active after a specified time
-        :param datetime active_before: Checks that an invite hasn't ended before a specified time
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: PaginatedInvitesList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.get_invites_with_http_info(**kwargs)  # noqa: E501
-
-    def get_invites_with_http_info(self, **kwargs):  # noqa: E501
-        """List all Invites  # noqa: E501
-
-        Gets a list of all `Invite` entities.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_invites_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param int limit: Limits the results to a specified number, defaults to 50
-        :param int offset: Offsets the results to a specified number, defaults to 0
-        :param str query: Filters by `first_name`, `last_name`, `company`, and `email`
-        :param str with_colours: A comma separated list of case-insensitive colour values. i.e., `red`, `green`, `yellow`, and `orange`
-        :param str location_ids: A comma separated list of Location IDs
-        :param str sort_by: Sorts by the field name and direction provided where the pattern is `FIELD_NAME_DIRECTION`
-        :param date starts_before: Filters results to all those *before* the provided datetime
-        :param date starts_after: Filters results to all those *after* the provided datetime
-        :param str include: A list of comma-separated related models to include
-        :param bool is_approved: True to return approved and auto approved invites, False to return pending and rejected invites
-        :param datetime active_after: Checks that an invite hasn't yet started, or has started and is still active after a specified time
-        :param datetime active_before: Checks that an invite hasn't ended before a specified time
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: tuple(PaginatedInvitesList, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = [
-            'limit',
-            'offset',
-            'query',
-            'with_colours',
-            'location_ids',
-            'sort_by',
-            'starts_before',
-            'starts_after',
-            'include',
-            'is_approved',
-            'active_after',
-            'active_before'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
+                        "START_DATE_ASC": "start_date_asc",
+                        "START_DATE_DESC": "start_date_desc",
+                        "END_DATE_ASC": "end_date_asc",
+                        "END_DATE_DESC": "end_date_desc",
+                        "CREATED_AT_ASC": "created_at_asc",
+                        "CREATED_AT_DESC": "created_at_desc",
+                        "UPDATED_AT_ASC": "updated_at_asc",
+                        "UPDATED_AT_DESC": "updated_at_desc"
+                    },
+                },
+                'openapi_types': {
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                    'query':
+                        (str,),
+                    'with_colours':
+                        (str,),
+                    'location_ids':
+                        (str,),
+                    'sort_by':
+                        (str,),
+                    'starts_before':
+                        (date,),
+                    'starts_after':
+                        (date,),
+                    'include':
+                        (str,),
+                    'is_approved':
+                        (bool,),
+                    'active_after':
+                        (datetime,),
+                    'active_before':
+                        (datetime,),
+                },
+                'attribute_map': {
+                    'limit': 'limit',
+                    'offset': 'offset',
+                    'query': 'query',
+                    'with_colours': 'with_colours',
+                    'location_ids': 'location_ids',
+                    'sort_by': 'sort_by',
+                    'starts_before': 'starts_before',
+                    'starts_after': 'starts_after',
+                    'include': 'include',
+                    'is_approved': 'is_approved',
+                    'active_after': 'active_after',
+                    'active_before': 'active_before',
+                },
+                'location_map': {
+                    'limit': 'query',
+                    'offset': 'query',
+                    'query': 'query',
+                    'with_colours': 'query',
+                    'location_ids': 'query',
+                    'sort_by': 'query',
+                    'starts_before': 'query',
+                    'starts_after': 'query',
+                    'include': 'query',
+                    'is_approved': 'query',
+                    'active_after': 'query',
+                    'active_before': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_invites
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_invites" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
+        def __update_invite(
+            self,
+            invite_id,
+            invite_update_params,
+            **kwargs
+        ):
+            """Update an Invite  # noqa: E501
 
-        collection_formats = {}
+            Updates an existing `Invite`.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
 
-        path_params = {}
+            >>> thread = api.update_invite(invite_id, invite_update_params, async_req=True)
+            >>> result = thread.get()
 
-        query_params = []
-        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
-            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
-        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
-            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
-        if 'query' in local_var_params and local_var_params['query'] is not None:  # noqa: E501
-            query_params.append(('query', local_var_params['query']))  # noqa: E501
-        if 'with_colours' in local_var_params and local_var_params['with_colours'] is not None:  # noqa: E501
-            query_params.append(('with_colours', local_var_params['with_colours']))  # noqa: E501
-        if 'location_ids' in local_var_params and local_var_params['location_ids'] is not None:  # noqa: E501
-            query_params.append(('location_ids', local_var_params['location_ids']))  # noqa: E501
-        if 'sort_by' in local_var_params and local_var_params['sort_by'] is not None:  # noqa: E501
-            query_params.append(('sort_by', local_var_params['sort_by']))  # noqa: E501
-        if 'starts_before' in local_var_params and local_var_params['starts_before'] is not None:  # noqa: E501
-            query_params.append(('starts_before', local_var_params['starts_before']))  # noqa: E501
-        if 'starts_after' in local_var_params and local_var_params['starts_after'] is not None:  # noqa: E501
-            query_params.append(('starts_after', local_var_params['starts_after']))  # noqa: E501
-        if 'include' in local_var_params and local_var_params['include'] is not None:  # noqa: E501
-            query_params.append(('include', local_var_params['include']))  # noqa: E501
-        if 'is_approved' in local_var_params and local_var_params['is_approved'] is not None:  # noqa: E501
-            query_params.append(('is_approved', local_var_params['is_approved']))  # noqa: E501
-        if 'active_after' in local_var_params and local_var_params['active_after'] is not None:  # noqa: E501
-            query_params.append(('active_after', local_var_params['active_after']))  # noqa: E501
-        if 'active_before' in local_var_params and local_var_params['active_before'] is not None:  # noqa: E501
-            query_params.append(('active_before', local_var_params['active_before']))  # noqa: E501
+            Args:
+                invite_id (str):
+                invite_update_params (InviteUpdateParams): Updated `Invite` information.
 
-        header_params = {}
+            Keyword Args:
+                idempotency_key (str): An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
 
-        form_params = []
-        local_var_files = {}
+            Returns:
+                InviteDetail
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['invite_id'] = \
+                invite_id
+            kwargs['invite_update_params'] = \
+                invite_update_params
+            return self.call_with_http_info(**kwargs)
 
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['TractionGuestAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/invites', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='PaginatedInvitesList',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def update_invite(self, invite_id, invite_update_params, **kwargs):  # noqa: E501
-        """Update an Invite  # noqa: E501
-
-        Updates an existing `Invite`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_invite(invite_id, invite_update_params, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str invite_id: (required)
-        :param InviteUpdateParams invite_update_params: Updated `Invite` information. (required)
-        :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: InviteDetail
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.update_invite_with_http_info(invite_id, invite_update_params, **kwargs)  # noqa: E501
-
-    def update_invite_with_http_info(self, invite_id, invite_update_params, **kwargs):  # noqa: E501
-        """Update an Invite  # noqa: E501
-
-        Updates an existing `Invite`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_invite_with_http_info(invite_id, invite_update_params, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool: execute request asynchronously
-        :param str invite_id: (required)
-        :param InviteUpdateParams invite_update_params: Updated `Invite` information. (required)
-        :param str idempotency_key: An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return: tuple(InviteDetail, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = [
-            'invite_id',
-            'invite_update_params',
-            'idempotency_key'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
+        self.update_invite = _Endpoint(
+            settings={
+                'response_type': (InviteDetail,),
+                'auth': [],
+                'endpoint_path': '/invites/{invite_id}',
+                'operation_id': 'update_invite',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'invite_id',
+                    'invite_update_params',
+                    'idempotency_key',
+                ],
+                'required': [
+                    'invite_id',
+                    'invite_update_params',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'invite_id':
+                        (str,),
+                    'invite_update_params':
+                        (InviteUpdateParams,),
+                    'idempotency_key':
+                        (str,),
+                },
+                'attribute_map': {
+                    'invite_id': 'invite_id',
+                    'idempotency_key': 'Idempotency-Key',
+                },
+                'location_map': {
+                    'invite_id': 'path',
+                    'invite_update_params': 'body',
+                    'idempotency_key': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__update_invite
         )
-
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_invite" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-        # verify the required parameter 'invite_id' is set
-        if self.api_client.client_side_validation and ('invite_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['invite_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `invite_id` when calling `update_invite`")  # noqa: E501
-        # verify the required parameter 'invite_update_params' is set
-        if self.api_client.client_side_validation and ('invite_update_params' not in local_var_params or  # noqa: E501
-                                                        local_var_params['invite_update_params'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `invite_update_params` when calling `update_invite`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'invite_id' in local_var_params:
-            path_params['invite_id'] = local_var_params['invite_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-        if 'idempotency_key' in local_var_params:
-            header_params['Idempotency-Key'] = local_var_params['idempotency_key']  # noqa: E501
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'invite_update_params' in local_var_params:
-            body_params = local_var_params['invite_update_params']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['TractionGuestAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/invites/{invite_id}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='InviteDetail',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)

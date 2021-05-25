@@ -1,6 +1,7 @@
 # CapacityByHourResponse
 
 The root of the CapacityByHour's schema.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

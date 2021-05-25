@@ -1,14 +1,15 @@
 # SigninDetail
 
 The root of the Signin type's schema.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**documents** | [**list[SignableDocument]**](SignableDocument.md) |  | [optional] 
+**documents** | [**[SignableDocument]**](SignableDocument.md) |  | [optional] 
 **signin_watchlist** | [**SigninWatchlist**](SigninWatchlist.md) |  | [optional] 
-**hosts** | [**list[Host]**](Host.md) |  | [optional] 
-**signin_data** | [**list[SigninData]**](SigninData.md) |  | [optional] 
+**hosts** | [**[Host]**](Host.md) |  | [optional] 
+**signin_data** | [**[SigninData]**](SigninData.md) |  | [optional] 
 **signin_acknowledgement** | [**SigninAcknowledgement**](SigninAcknowledgement.md) |  | [optional] 
 **note** | **str** |  | [optional] 
 **is_signed_out** | **bool** | A one-way method of Signing out a Signin | [optional] 
