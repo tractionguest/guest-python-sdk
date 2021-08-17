@@ -40,7 +40,8 @@ class WatchlistCreateParams(object):
         'first_name': 'str',
         'email': 'str',
         'colour': 'str',
-        'base64_image': 'str'
+        'base64_image': 'str',
+        'driver_license': 'str'
     }
 
     attribute_map = {
@@ -50,10 +51,11 @@ class WatchlistCreateParams(object):
         'first_name': 'first_name',
         'email': 'email',
         'colour': 'colour',
-        'base64_image': 'base64_image'
+        'base64_image': 'base64_image',
+        'driver_license': 'driver_license'
     }
 
-    def __init__(self, aliases=None, notes=None, last_name=None, first_name=None, email=None, colour=None, base64_image=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aliases=None, notes=None, last_name=None, first_name=None, email=None, colour=None, base64_image=None, driver_license=None, local_vars_configuration=None):  # noqa: E501
         """WatchlistCreateParams - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class WatchlistCreateParams(object):
         self._email = None
         self._colour = None
         self._base64_image = None
+        self._driver_license = None
         self.discriminator = None
 
         if aliases is not None:
@@ -82,6 +85,8 @@ class WatchlistCreateParams(object):
             self.colour = colour
         if base64_image is not None:
             self.base64_image = base64_image
+        if driver_license is not None:
+            self.driver_license = driver_license
 
     @property
     def aliases(self):
@@ -237,6 +242,27 @@ class WatchlistCreateParams(object):
         """
 
         self._base64_image = base64_image
+
+    @property
+    def driver_license(self):
+        """Gets the driver_license of this WatchlistCreateParams.  # noqa: E501
+
+
+        :return: The driver_license of this WatchlistCreateParams.  # noqa: E501
+        :rtype: str
+        """
+        return self._driver_license
+
+    @driver_license.setter
+    def driver_license(self, driver_license):
+        """Sets the driver_license of this WatchlistCreateParams.
+
+
+        :param driver_license: The driver_license of this WatchlistCreateParams.  # noqa: E501
+        :type: str
+        """
+
+        self._driver_license = driver_license
 
     def to_dict(self):
         """Returns the model properties as a dict"""

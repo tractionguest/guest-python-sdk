@@ -35,7 +35,7 @@ configuration.host = "https://us.tractionguest.com/api/v3"
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.WatchlistsApi(api_client)
-    watchlist_create_params = {"colour":"GREEN","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"]} # WatchlistCreateParams | The new `Watchlist` to create
+    watchlist_create_params = {"colour":"GREEN","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"base 64 encoded image","driver_license":"some text"} # WatchlistCreateParams | The new `Watchlist` to create
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
@@ -293,7 +293,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.WatchlistsApi(api_client)
     watchlist_id = 'watchlist_id_example' # str | 
-watchlist_create_params = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"]} # WatchlistCreateParams | The watchlist record attributes to update
+watchlist_create_params = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"base 64 encoded image","driver_license":"some text"} # WatchlistCreateParams | The watchlist record attributes to update
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
