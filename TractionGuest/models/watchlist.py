@@ -42,7 +42,9 @@ class Watchlist(object):
         'first_name': 'str',
         'email': 'str',
         'colour': 'str',
-        'driver_license': 'str'
+        'driver_license': 'str',
+        'created_at': 'datetime',
+        'updated_at': 'datetime'
     }
 
     attribute_map = {
@@ -54,10 +56,12 @@ class Watchlist(object):
         'first_name': 'first_name',
         'email': 'email',
         'colour': 'colour',
-        'driver_license': 'driver_license'
+        'driver_license': 'driver_license',
+        'created_at': 'created_at',
+        'updated_at': 'updated_at'
     }
 
-    def __init__(self, id=None, aliases=None, photo=None, notes=None, last_name=None, first_name=None, email=None, colour=None, driver_license=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, aliases=None, photo=None, notes=None, last_name=None, first_name=None, email=None, colour=None, driver_license=None, created_at=None, updated_at=None, local_vars_configuration=None):  # noqa: E501
         """Watchlist - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +76,8 @@ class Watchlist(object):
         self._email = None
         self._colour = None
         self._driver_license = None
+        self._created_at = None
+        self._updated_at = None
         self.discriminator = None
 
         self.id = id
@@ -91,6 +97,10 @@ class Watchlist(object):
             self.colour = colour
         if driver_license is not None:
             self.driver_license = driver_license
+        if created_at is not None:
+            self.created_at = created_at
+        if updated_at is not None:
+            self.updated_at = updated_at
 
     @property
     def id(self):
@@ -288,6 +298,48 @@ class Watchlist(object):
         """
 
         self._driver_license = driver_license
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this Watchlist.  # noqa: E501
+
+
+        :return: The created_at of this Watchlist.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this Watchlist.
+
+
+        :param created_at: The created_at of this Watchlist.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this Watchlist.  # noqa: E501
+
+
+        :return: The updated_at of this Watchlist.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this Watchlist.
+
+
+        :param updated_at: The updated_at of this Watchlist.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated_at = updated_at
 
     def to_dict(self):
         """Returns the model properties as a dict"""
