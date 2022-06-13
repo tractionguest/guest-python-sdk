@@ -14,10 +14,12 @@ Name | Type | Description | Notes
 **watchlist_colour** | **str** |  | [optional] 
 **location** | [**Location**](Location.md) |  | [optional] 
 **hosts** | [**list[Host]**](Host.md) |  | [optional] 
-**start_date** | **datetime** |  | [optional] 
+**start_date** | **datetime** | Deprecated. Use &#x60;start_date_utc&#x60; instead. | [optional] 
+**start_date_utc** | **datetime** |  | [optional] 
 **last_name** | **str** |  | 
 **first_name** | **str** |  | 
-**end_date** | **datetime** |  | [optional] 
+**end_date** | **datetime** | Deprecated. Use &#x60;end_date_utc&#x60; instead. | [optional] 
+**end_date_utc** | **datetime** |  | [optional] 
 **email** | **str** |  | 
 **created_at** | **datetime** |  | [optional] 
 **company** | **str** |  | [optional] 
