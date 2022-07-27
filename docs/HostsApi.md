@@ -97,7 +97,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.HostsApi(api_client)
     idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
-host_batch_create_params = TractionGuest.HostBatchCreateParams() # HostBatchCreateParams |  (optional)
+host_batch_create_params = {"hosts":[{"email":"string","first_name":"string","last_name":"string","profile_pic_url":"string","department":"string","mobile_number":"string"}]} # HostBatchCreateParams |  (optional)
 
     try:
         # Create multiple Hosts
