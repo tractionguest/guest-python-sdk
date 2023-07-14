@@ -99,7 +99,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.InvitesApi(api_client)
     location_id = 'location_id_example' # str | 
-invite_create_params = {"company":"some text","email":"some text","end_date":"2020-07-17T01:59:59.999Z","last_name":"some text","start_date":"2020-07-17T01:59:59.999Z","title":"some text","watchlist_colour":"ORANGE","host_ids":[96,2],"custom_fields":[{"format":"string","field_name":"some text","field_value":"some text"},{"format":"string","field_name":"some text","field_value":"some text"}],"email_template_id":53,"mobile_number":"some text","first_name":"some text","notification_triggers":[{"offset_direction":"BEFORE","offset_unit":"days","offset_amount":34,"offset_origin":"START","email_template_id":63,"notification_groups":["some text","some text"]},{"offset_direction":"AFTER","offset_unit":"hours","offset_amount":12,"offset_origin":"END","email_template_id":2,"notification_groups":["some text","some text"]}]} # InviteCreateParams | 
+invite_create_params = {"company":"some text","email":"some text","end_date":"2020-07-17T01:59:59.999Z","last_name":"some text","start_date":"2020-07-17T01:59:59.999Z","title":"some text","watchlist_colour":"ORANGE","host_ids":[96,2],"custom_fields":[{"format":"string","field_name":"some text","field_value":"some text"},{"format":"string","field_name":"some text","field_value":"some text"}],"email_template_id":53,"mobile_number":"some text","first_name":"some text","license_plate":"some text","notification_triggers":[{"offset_direction":"BEFORE","offset_unit":"days","offset_amount":34,"offset_origin":"START","email_template_id":63,"notification_groups":["some text","some text"]},{"offset_direction":"AFTER","offset_unit":"hours","offset_amount":12,"offset_origin":"END","email_template_id":2,"notification_groups":["some text","some text"]}],"parking_stall":{"stall_number":66,"parking_lot_id":321,"parking_stall_id":332}} # InviteCreateParams | 
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
@@ -297,7 +297,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.InvitesApi(api_client)
     invite_id = 'invite_id_example' # str | 
-include = 'include_example' # str | A list of comma-separated related models to include (optional)
+include = 'include_example' # str | A list of comma-separated related models to include i.e., 'assigned_stall' (optional)
 
     try:
         # Get an Invite
@@ -312,7 +312,7 @@ include = 'include_example' # str | A list of comma-separated related models to 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invite_id** | **str**|  | 
- **include** | **str**| A list of comma-separated related models to include | [optional] 
+ **include** | **str**| A list of comma-separated related models to include i.e., &#39;assigned_stall&#39; | [optional] 
 
 ### Return type
 
@@ -370,7 +370,7 @@ location_ids = 'location_ids_example' # str | A comma separated list of Location
 sort_by = 'sort_by_example' # str | Sorts by the field name and direction provided where the pattern is `FIELD_NAME_DIRECTION` (optional)
 starts_before = '2013-10-20' # date | Filters results to all those *before* the provided datetime (optional)
 starts_after = '2013-10-20' # date | Filters results to all those *after* the provided datetime (optional)
-include = 'include_example' # str | A list of comma-separated related models to include (optional)
+include = 'include_example' # str | A list of comma-separated related models to include i.e., 'assigned_stall' (optional)
 is_approved = True # bool | True to return approved and auto approved invites, False to return pending and rejected invites (optional)
 active_after = '2013-10-20T19:20:30+01:00' # datetime | Checks that an invite hasn't yet started, or has started and is still active after a specified time (optional)
 active_before = '2013-10-20T19:20:30+01:00' # datetime | Checks that an invite hasn't ended before a specified time (optional)
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
  **sort_by** | **str**| Sorts by the field name and direction provided where the pattern is &#x60;FIELD_NAME_DIRECTION&#x60; | [optional] 
  **starts_before** | **date**| Filters results to all those *before* the provided datetime | [optional] 
  **starts_after** | **date**| Filters results to all those *after* the provided datetime | [optional] 
- **include** | **str**| A list of comma-separated related models to include | [optional] 
+ **include** | **str**| A list of comma-separated related models to include i.e., &#39;assigned_stall&#39; | [optional] 
  **is_approved** | **bool**| True to return approved and auto approved invites, False to return pending and rejected invites | [optional] 
  **active_after** | **datetime**| Checks that an invite hasn&#39;t yet started, or has started and is still active after a specified time | [optional] 
  **active_before** | **datetime**| Checks that an invite hasn&#39;t ended before a specified time | [optional] 
@@ -448,7 +448,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.InvitesApi(api_client)
     invite_id = 'invite_id_example' # str | 
-invite_update_params = {"checked_in":true,"on_premise":true,"sent_email":"some text","user_id":45,"device_configuration_id":14} # InviteUpdateParams | Updated `Invite` information.
+invite_update_params = {"checked_in":true,"on_premise":true,"sent_email":"some text","user_id":45,"device_configuration_id":14,"license_plate":"some text"} # InviteUpdateParams | Updated `Invite` information.
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
