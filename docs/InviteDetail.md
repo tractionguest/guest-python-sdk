@@ -23,6 +23,9 @@ Name | Type | Description | Notes
 **company** | **str** |  | [optional] 
 **checked_in** | **bool** |  | [optional] 
 **group_visit** | [**GroupVisit**](GroupVisit.md) |  | [optional] 
+**license_plate** | **str** |  | [optional] 
+**assigned_stall** | [**AssignedStall**](AssignedStall.md) |  | [optional] 
+**created_by** | [**CreatedByUser**](CreatedByUser.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
