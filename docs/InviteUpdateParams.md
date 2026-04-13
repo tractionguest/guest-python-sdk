@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **notification_triggers** | [**list[NotificationTriggerCreateParams]**](NotificationTriggerCreateParams.md) |  | [optional] 
 **first_name** | **str** |  | [optional] 
 **email_template_id** | **int** |  | [optional] 
+**flex_values** | [**list[FlexValue]**](FlexValue.md) |  | [optional] 
 **custom_fields** | [**list[CustomField]**](CustomField.md) |  | [optional] 
 **host_ids** | **list[int]** |  | [optional] 
 **title** | **str** |  | [optional] 
@@ -19,6 +20,8 @@ Name | Type | Description | Notes
 **email** | **str** |  | [optional] 
 **company** | **str** |  | [optional] 
 **group_visit_id** | **int** |  | [optional] 
+**license_plate** | **str** |  | [optional] 
+**parking_stall** | [**InviteCreateParamsParkingStall**](InviteCreateParamsParkingStall.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

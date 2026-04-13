@@ -5,7 +5,7 @@ All URIs are relative to *https://us.tractionguest.com/api/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_package**](PackagesApi.md#create_package) | **POST** /packages | Create package
-[**delete_package**](PackagesApi.md#delete_package) | **DELETE** /packages/{package_id} | 
+[**delete_package**](PackagesApi.md#delete_package) | **DELETE** /packages/{package_id} | Delete Package
 [**get_package**](PackagesApi.md#get_package) | **GET** /packages/{package_id} | Get Package
 [**get_packages**](PackagesApi.md#get_packages) | **GET** /packages | Get packages
 [**update_package**](PackagesApi.md#update_package) | **PUT** /packages/{package_id} | Update Package
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 # **delete_package**
 > delete_package(package_id, idempotency_key=idempotency_key)
 
-
+Delete Package
 
 Delete a pacakge
 
@@ -100,6 +100,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
+        # Delete Package
         api_instance.delete_package(package_id, idempotency_key=idempotency_key)
     except ApiException as e:
         print("Exception when calling PackagesApi->delete_package: %s\n" % e)
