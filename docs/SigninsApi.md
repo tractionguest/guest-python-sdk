@@ -34,7 +34,7 @@ configuration.host = "https://us.tractionguest.com/api/v3"
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.SigninsApi(api_client)
-    signin_create_params = {"guest_email_template_id":47,"host_email_template_id":65,"host_ids":[77,49],"location_id":79,"send_notifications":true,"photos":[{},{}],"sms_message":"some text","first_name":"some text","last_name":"some text","company":"some text","email":"some text"} # SigninCreateParams | Params for creating a Signin can omit certain fields if a `registration_id` is present. (optional)
+    signin_create_params = {"guest_email_template_id":47,"host_email_template_id":65,"host_ids":[77,49],"location_id":79,"send_notifications":true,"sms_message":"some text","first_name":"some text","last_name":"some text","company":"some text","email":"some text"} # SigninCreateParams | Params for creating a Signin can omit certain fields if a `registration_id` is present. (optional)
 
     try:
         # Create Signin
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_signins**
-> PaginatedSigninsList get_signins(location_ids=location_ids, with_colours=with_colours, query=query, with_acknowledged=with_acknowledged, with_signed_in=with_signed_in, signin_before=signin_before, signin_after=signin_after, limit=limit, offset=offset, query_sort=query_sort, include=include)
+> PaginatedSigninsList get_signins(location_ids=location_ids, with_colours=with_colours, query=query, with_acknowledged=with_acknowledged, with_signed_in=with_signed_in, signin_before=signin_before, signin_after=signin_after, limit=limit, offset=offset, query_sort=query_sort, include=include, include_anonymized=include_anonymized)
 
 List all Signins
 
@@ -175,10 +175,11 @@ limit = 56 # int | Limits the results to a specified number, defaults to 50 (opt
 offset = 56 # int | Offsets the results to a specified number, defaults to 0 (optional)
 query_sort = 'query_sort_example' # str | Allows you to override ordering by most relevant results when querying (optional)
 include = 'include_example' # str | A list of comma-separated related models to include (optional)
+include_anonymized = True # bool | Set this flag to `true` to include anonymized signins in the response (optional)
 
     try:
         # List all Signins
-        api_response = api_instance.get_signins(location_ids=location_ids, with_colours=with_colours, query=query, with_acknowledged=with_acknowledged, with_signed_in=with_signed_in, signin_before=signin_before, signin_after=signin_after, limit=limit, offset=offset, query_sort=query_sort, include=include)
+        api_response = api_instance.get_signins(location_ids=location_ids, with_colours=with_colours, query=query, with_acknowledged=with_acknowledged, with_signed_in=with_signed_in, signin_before=signin_before, signin_after=signin_after, limit=limit, offset=offset, query_sort=query_sort, include=include, include_anonymized=include_anonymized)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling SigninsApi->get_signins: %s\n" % e)
@@ -199,6 +200,7 @@ Name | Type | Description  | Notes
  **offset** | **int**| Offsets the results to a specified number, defaults to 0 | [optional] 
  **query_sort** | **str**| Allows you to override ordering by most relevant results when querying | [optional] 
  **include** | **str**| A list of comma-separated related models to include | [optional] 
+ **include_anonymized** | **bool**| Set this flag to &#x60;true&#x60; to include anonymized signins in the response | [optional] 
 
 ### Return type
 
@@ -248,7 +250,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.SigninsApi(api_client)
     signin_id = 'signin_id_example' # str | 
-signin_update_params = {"is_signed_out":true,"is_acknowledged":true,"is_accounted_for":true} # SigninUpdateParams | The only updatable values for a `Signin` are `badge_number`, `badge_returned`, `is_accounted_for`, `is_signed_out`, and `is_acknowledged`.  `is_signed_out` and `is_acknowledged` are pseudo attributes that once set to true, are irreversible.
+signin_update_params = {"is_signed_out":true,"is_acknowledged":true,"is_accounted_for":true} # SigninUpdateParams | The only updatable values for a `Signin` are `badge_number`, `badge_returned`, `is_accounted_for`, `is_signed_out`, and `is_acknowledged`. `is_signed_out` and `is_acknowledged` are pseudo attributes that once set to true, are irreversible.
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
@@ -264,7 +266,7 @@ idempotency_key = 'idempotency_key_example' # str | An optional idempotency key 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **signin_id** | **str**|  | 
- **signin_update_params** | [**SigninUpdateParams**](SigninUpdateParams.md)| The only updatable values for a &#x60;Signin&#x60; are &#x60;badge_number&#x60;, &#x60;badge_returned&#x60;, &#x60;is_accounted_for&#x60;, &#x60;is_signed_out&#x60;, and &#x60;is_acknowledged&#x60;.  &#x60;is_signed_out&#x60; and &#x60;is_acknowledged&#x60; are pseudo attributes that once set to true, are irreversible. | 
+ **signin_update_params** | [**SigninUpdateParams**](SigninUpdateParams.md)| The only updatable values for a &#x60;Signin&#x60; are &#x60;badge_number&#x60;, &#x60;badge_returned&#x60;, &#x60;is_accounted_for&#x60;, &#x60;is_signed_out&#x60;, and &#x60;is_acknowledged&#x60;. &#x60;is_signed_out&#x60; and &#x60;is_acknowledged&#x60; are pseudo attributes that once set to true, are irreversible. | 
  **idempotency_key** | **str**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] 
 
 ### Return type
