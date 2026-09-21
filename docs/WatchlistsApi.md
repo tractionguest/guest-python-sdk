@@ -35,7 +35,7 @@ configuration.host = "https://us.tractionguest.com/api/v3"
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.WatchlistsApi(api_client)
-    watchlist_create_params = {"colour":"GREEN","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"base 64 encoded image","driver_license":"some text"} # WatchlistCreateParams | The new `Watchlist` to create
+    watchlist_create_params = {"colour":"GREEN","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"aGVsbG8=","driver_license":"some text"} # WatchlistCreateParams | The new `Watchlist` to create
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
@@ -226,7 +226,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     limit = 56 # int | Limits the results to a specified number, defaults to 50 (optional)
 offset = 56 # int | Offsets the results to a specified number, defaults to 0 (optional)
 query = 'query_example' # str | Query the results by `first_name`, `last_name`, `email`, `colour`, and `notes` all at once. (optional)
-with_colours = 'with_colours_example' # str | A comma separated list of case-insensitive colour values. i.e., `red`, `green`, `yellow`, and `orange` (optional)
+with_colours = 'with_colours_example' # str | A comma separated list of case-insensitive colour values. i.e., `red`, `green`, `yellow`, `orange`, and `safe` (optional)
 include = 'include_example' # str | A list of comma-separated related models to include (optional)
 
     try:
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Limits the results to a specified number, defaults to 50 | [optional] 
  **offset** | **int**| Offsets the results to a specified number, defaults to 0 | [optional] 
  **query** | **str**| Query the results by &#x60;first_name&#x60;, &#x60;last_name&#x60;, &#x60;email&#x60;, &#x60;colour&#x60;, and &#x60;notes&#x60; all at once. | [optional] 
- **with_colours** | **str**| A comma separated list of case-insensitive colour values. i.e., &#x60;red&#x60;, &#x60;green&#x60;, &#x60;yellow&#x60;, and &#x60;orange&#x60; | [optional] 
+ **with_colours** | **str**| A comma separated list of case-insensitive colour values. i.e., &#x60;red&#x60;, &#x60;green&#x60;, &#x60;yellow&#x60;, &#x60;orange&#x60;, and &#x60;safe&#x60; | [optional] 
  **include** | **str**| A list of comma-separated related models to include | [optional] 
 
 ### Return type
@@ -293,7 +293,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.WatchlistsApi(api_client)
     watchlist_id = 'watchlist_id_example' # str | 
-watchlist_create_params = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"base 64 encoded image","driver_license":"some text"} # WatchlistCreateParams | The watchlist record attributes to update
+watchlist_create_params = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"aGVsbG8=","driver_license":"some text"} # WatchlistCreateParams | The watchlist record attributes to update
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
