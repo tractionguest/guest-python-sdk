@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **alt_names** | **list[str]** |  | [optional] 
 **federal_register_notice** | **str** |  | [optional] 
-**name** | **str** |  | 
+**name** | **str** |  | [optional] 
 **source_information_url** | **str** |  | [optional] 
 **source_list_url** | **str** |  | [optional] 
-**list** | **str** |  | 
+**list** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **category** | **str** |  | [optional] 
 **street1** | **str** |  | [optional] 
@@ -64,6 +64,7 @@ Name | Type | Description | Notes
 **finscan_category** | **str** |  | [optional] 
 **wrapper_status** | **str** |  | [optional] 
 **source_lists** | **str** |  | [optional] 
+**error** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
