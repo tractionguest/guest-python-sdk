@@ -12,7 +12,9 @@ from TractionGuest.api.hosts_api import HostsApi
 from TractionGuest.api.invites_api import InvitesApi
 from TractionGuest.api.locations_api import LocationsApi
 from TractionGuest.api.packages_api import PackagesApi
+from TractionGuest.api.parking_api import ParkingApi
 from TractionGuest.api.registrations_api import RegistrationsApi
+from TractionGuest.api.screening_providers_api import ScreeningProvidersApi
 from TractionGuest.api.signins_api import SigninsApi
 from TractionGuest.api.users_api import UsersApi
 from TractionGuest.api.watchlists_api import WatchlistsApi

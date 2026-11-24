@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_watchlist**](WatchlistsApi.md#delete_watchlist) | **DELETE** /watchlists/{watchlist_id} | Deletes a Watchlist
 [**get_watchlist**](WatchlistsApi.md#get_watchlist) | **GET** /watchlists/{watchlist_id} | Get a Watchlist
 [**get_watchlists**](WatchlistsApi.md#get_watchlists) | **GET** /watchlists | List all Watchlists
+[**import_watchlists**](WatchlistsApi.md#import_watchlists) | **POST** /watchlists/import | Import Watchlists from a CSV
 [**update_watchlist**](WatchlistsApi.md#update_watchlist) | **PUT** /watchlists/{watchlist_id} | Update a Watchlist
 
 
@@ -35,7 +36,7 @@ configuration.host = "https://us.tractionguest.com/api/v3"
 with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.WatchlistsApi(api_client)
-    watchlist_create_params = {"colour":"GREEN","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"base 64 encoded image","driver_license":"some text"} # WatchlistCreateParams | The new `Watchlist` to create
+    watchlist_create_params = {"colour":"GREEN","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"aGVsbG8=","driver_license":"some text"} # WatchlistCreateParams | The new `Watchlist` to create
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
@@ -226,7 +227,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     limit = 56 # int | Limits the results to a specified number, defaults to 50 (optional)
 offset = 56 # int | Offsets the results to a specified number, defaults to 0 (optional)
 query = 'query_example' # str | Query the results by `first_name`, `last_name`, `email`, `colour`, and `notes` all at once. (optional)
-with_colours = 'with_colours_example' # str | A comma separated list of case-insensitive colour values. i.e., `red`, `green`, `yellow`, and `orange` (optional)
+with_colours = 'with_colours_example' # str | A comma separated list of case-insensitive colour values. i.e., `red`, `green`, `yellow`, `orange`, and `safe` (optional)
 include = 'include_example' # str | A list of comma-separated related models to include (optional)
 
     try:
@@ -244,7 +245,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Limits the results to a specified number, defaults to 50 | [optional] 
  **offset** | **int**| Offsets the results to a specified number, defaults to 0 | [optional] 
  **query** | **str**| Query the results by &#x60;first_name&#x60;, &#x60;last_name&#x60;, &#x60;email&#x60;, &#x60;colour&#x60;, and &#x60;notes&#x60; all at once. | [optional] 
- **with_colours** | **str**| A comma separated list of case-insensitive colour values. i.e., &#x60;red&#x60;, &#x60;green&#x60;, &#x60;yellow&#x60;, and &#x60;orange&#x60; | [optional] 
+ **with_colours** | **str**| A comma separated list of case-insensitive colour values. i.e., &#x60;red&#x60;, &#x60;green&#x60;, &#x60;yellow&#x60;, &#x60;orange&#x60;, and &#x60;safe&#x60; | [optional] 
  **include** | **str**| A list of comma-separated related models to include | [optional] 
 
 ### Return type
@@ -265,6 +266,69 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful response - returns an array of &#x60;Watchlist&#x60; entities. |  -  |
 **4XX** | A generic error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **import_watchlists**
+> BatchJob import_watchlists(watchlist_import_params, idempotency_key=idempotency_key)
+
+Import Watchlists from a CSV
+
+Creates a batch of `Watchlist` records from a CSV in an async queue. The CSV is validated before anything is queued, and the number of rows is capped by the account's watchlist CSV upload limit. Please note, every action taken against this endpoint is recorded in the audit log.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import TractionGuest
+from TractionGuest.rest import ApiException
+from pprint import pprint
+configuration = TractionGuest.Configuration()
+
+# Defining host is optional and default to https://us.tractionguest.com/api/v3
+configuration.host = "https://us.tractionguest.com/api/v3"
+
+# Enter a context with an instance of the API client
+with TractionGuest.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = TractionGuest.WatchlistsApi(api_client)
+    watchlist_import_params = {"csv_data":"first_name,last_name,email,colour,notes\nJane,Doe,jane.doe@example.com,RED,Do not admit\nJohn,Smith,,GREEN,"} # WatchlistImportParams | The CSV of `Watchlist` records to import
+idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
+
+    try:
+        # Import Watchlists from a CSV
+        api_response = api_instance.import_watchlists(watchlist_import_params, idempotency_key=idempotency_key)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WatchlistsApi->import_watchlists: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **watchlist_import_params** | [**WatchlistImportParams**](WatchlistImportParams.md)| The CSV of &#x60;Watchlist&#x60; records to import | 
+ **idempotency_key** | **str**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] 
+
+### Return type
+
+[**BatchJob**](BatchJob.md)
+
+### Authorization
+
+[TractionGuestAuth](../README.md#TractionGuestAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Accepted - returns the &#x60;BatchJob&#x60; creating the records, which can be polled at &#x60;/batches/{batch_id}&#x60;. |  -  |
+**4XX** | An error happened. An invalid CSV is rejected as a whole, with errors that name the failing row numbers, and no &#x60;Watchlist&#x60; records are created. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -293,7 +357,7 @@ with TractionGuest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = TractionGuest.WatchlistsApi(api_client)
     watchlist_id = 'watchlist_id_example' # str | 
-watchlist_create_params = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"base 64 encoded image","driver_license":"some text"} # WatchlistCreateParams | The watchlist record attributes to update
+watchlist_create_params = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"],"base64_image":"aGVsbG8=","driver_license":"some text"} # WatchlistCreateParams | The watchlist record attributes to update
 idempotency_key = 'idempotency_key_example' # str | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored (optional)
 
     try:
